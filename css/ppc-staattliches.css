@@ -1,0 +1,763 @@
+@import "ppc-site-custom.css";
+/* .ppc-site-template-template-ppc-old-layout {
+  --lt-green: #DEE6E1;
+  --green: #00A475;
+  --dark-green: #095741;
+  --black-green: #1C1E1A;
+  --white: #FFFFFF;
+} */
+:root {
+  --lt-green: #DEE6E1;
+  --green: #00A475;
+  --dark-green: #095741;
+  --black-green: #1C1E1A;
+  --white: #FFFFFF;
+}
+
+
+/*--------------------------------------------------------------
+# Text Colors
+--------------------------------------------------------------*/
+.lt-green{
+	color:var(--lt-green)
+}
+.green{
+	color:var(--green);
+}
+.dark-green{
+	color:var(--dark-green);
+}
+.black-green{
+	color:var(--black-green);
+}
+.white{
+	color:var(--white);
+}
+
+/*--------------------------------------------------------------
+# Background Colors
+--------------------------------------------------------------*/
+.bg-lt-green{
+	background:var(--lt-green)
+}
+.bg-green{
+	background:var(--green);
+}
+.bg-dark-green{
+	background:var(--dark-green);
+}
+.bg-black-green{
+	background:var(--black-green);
+}
+.bg-white{
+	background:var(--white);
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+h1, 
+.hero h1{
+	font-size: 42px;
+	font-weight: 400;
+	max-width: 720px;
+	font-family: "Staatliches", sans-serif;
+}
+.large-header{
+	font-size: 40px;
+	font-weight: 600;
+	line-height: 1;
+	text-decoration: none;
+}
+h2{
+	font-size: 32px;
+    font-weight: 400;
+    font-family: "Staatliches", sans-serif;
+}
+h3{
+	font-size: 32px;
+	font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+	margin:0;
+}
+h4{
+	font-size: 20px;
+	font-weight: 400;
+}
+p.large{
+	font-size: 16px;
+	font-weight: 300;
+	letter-spacing: 2px;
+}
+p{
+	font-size: 16px;
+	font-weight: 400;
+	margin:0;
+}
+p.small{
+	font-size: 14px;
+	font-weight: 400;
+}
+p.medium{
+	font-size: 20px;
+	letter-spacing: 2px;
+	font-weight: 400;
+}
+
+.single-ppc-site .form-cta .copy h2 {
+  font-family: "Teko", sans-serif;	
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.single-ppc-site .panel-carousel {
+	display: none;
+}
+
+.gform_wrapper.gravity-theme .gform_footer input {
+	font-size: 16px;
+	font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+}
+
+.caption{
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.section-links li {
+    font-size: 16px;
+}
+
+
+.button{
+	font-size: 20px;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+/* Spacing */
+h3 + p{
+	margin-top: 0;
+}
+
+section{
+	padding:5rem 0;
+}
+blackcircle{
+	bottom: 60px !important;
+	z-index: 10;
+}
+
+@media only screen and (max-width: 1100px) {
+	h1{
+		font-size: 60px;
+	}
+	h2{
+		font-size: 32px;
+	}
+}
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+/* Base */
+.container{
+	width: 78%;
+	max-width: none;
+}
+.single-ppc-site .hero{
+	padding: 0px;
+}
+.single-ppc-site .hero .container{
+	padding: 12rem 0px;
+}
+
+html[lang="es-MX"] .single-ppc-site .hero .container{
+	padding: 10rem 0px;
+}
+
+@media screen and (max-width: 1200px) {
+	.ppc-site-template-template-ppc-staattliches .form-cta {
+		margin-top: 0 !important;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12, .grid-13, .grid-14, .grid-15, .grid-16{
+		width: 100%;
+	} 
+	.container{
+		width: 90%;
+	}
+}
+
+.hero .wrong-full-death_banner {
+    display: none;
+}
+
+.ppc-site-template-template-ppc-staattliches .number {
+	font-size: 36px;
+}
+
+/* Header */
+.single-ppc-site header{
+	background:var(--white);
+}
+.single-ppc-site header .logo img{
+	filter:none;
+}
+@media screen and (max-width: 1100px) {
+	.single-ppc-site header .phone-call{
+		flex-direction: row;
+		margin-top: 1rem;
+	}
+	.single-ppc-site header .logo img{
+		width: 100%;
+	}
+}
+
+/* Hero */
+/* .hero{
+	margin-top: 5rem;
+}
+.hero{
+	padding-bottom: 3rem;
+} */
+.form-cta{
+	margin-top: -25.4rem;
+}
+@media screen and (max-width: 1100px) {
+	.single-ppc-site .form-cta{
+		margin-top: 0;
+		padding-bottom: 0;
+	}
+	.single-ppc-site .form-cta .copy{
+		margin: 1rem auto 0 auto;
+	}
+	.single-ppc-site .hero{
+/* 		margin-top: 148px; */
+/* 		padding:7.5rem 0; */
+	}
+	.single-ppc-site .hero h1{
+		font-size: 28px;
+	}
+	.form-cta p.large,
+	.form-cta h3{
+		background:var(--white);
+		color:var(--black-green);
+	}
+	.form-cta p.large{
+		padding-bottom: 2.5rem;
+	}
+}
+
+
+/* Numbers Carousel */
+.number {
+    font-size: 32px;
+    font-weight: 400;
+    font-family: "Staatliches", sans-serif;
+}
+.numbers-carousel{
+	background:var(--black-green);
+	padding:2rem;
+}
+.numbers-carousel .number{
+	color:var(--white);
+}
+.numbers-carousel h2{
+	color:var(--green);
+	margin:0;
+	font-size: 32px;
+    font-weight: 400;
+    font-family: "Staatliches", sans-serif;
+}
+
+@media (min-width: 992px) {
+	.numbers-contain .item {
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+}
+
+.ppc-site-template .caps {
+    font-size: 14px !important;
+}
+
+@media only screen and (max-width: 1840px) {
+	.ppc-site-template-template-ppc-staattliches .hero .copy {
+		margin-top: 0;
+		justify-content: start;
+	}
+}
+
+@media only screen and (min-width: 1220px) and (max-width: 1366px) {
+	.ppc-site-template-template-ppc-staattliches .hero h1 {
+		max-width: 600px;
+	}
+}
+
+@media only screen and (min-width: 1120px) and (max-width: 1180px) {
+
+	.ppc-site-template-template-ppc-staattliches .form-cta {
+        margin-top: -366px !important;
+    }
+
+	.hero h1 {
+		max-width: 529px;
+	}
+}
+
+@media only screen and (max-width: 1100px) {
+	.numbers-carousel{
+		padding:2rem 0;
+	}
+	.numbers-carousel .grid-3{
+		width: 30%;
+		padding:0;
+		margin-bottom: 0;
+	}
+	.numbers-carousel .number{
+		font-size: 2rem;
+		
+	}
+	.flickity-page-dots{
+		display: none;
+	}
+	.numbers-carousel h2{
+		font-size: 18px;
+	}
+	.nascar .flickity-page-dots{
+		display: none;
+	}
+
+	.ppc-site-template-template-ppc-staattliches.single-ppc-site .hero h1 {
+        font-size: 42px;
+    }
+
+	.ppc-site-template-template-ppc-staattliches.single-ppc-site .numbers-carousel .number {
+        font-size: 36px;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+	.ppc-site-template-template-ppc-staattliches.single-ppc-site .ppc-show--mobile {
+        width: 100%;
+    }
+
+	.ppc-site-template-template-ppc-staattliches.single-ppc-site .hero .container {
+        padding: 10rem 0 0;
+    }
+
+	.ppc-site-template-template-ppc-staattliches.single-ppc-site  .hero h1 {
+        margin-top: 5rem;
+    }
+
+	.ppc-site-template-template-ppc-staattliches.single-ppc-site h2 {
+        font-size: 32px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+	.ppc-site-template-template-ppc-staattliches.single-ppc-site .hero .container {
+		margin-top: 10rem;
+		padding-top: 0 !important;
+    }
+
+	.single-ppc-site.ppc-site-template-template-ppc-staattliches .hero h1 {
+        margin-top: 5rem;
+    }
+
+	.single-ppc-site.ppc-site-template-template-ppc-staattliches h2 {
+		font-size: 26px;
+	}
+}
+
+/* Attorneys
+--------------------------------------------- */
+/*
+.attorneys .container{
+	max-width: 74.6%;
+}
+*/
+.attorneys{
+	padding:5rem 0;
+}
+.attorneys .row{
+	column-gap: 20px;
+}
+.attorneys .single-attorney{
+	text-decoration: none;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 30%;
+    margin: 0 1.5%;
+    align-content: flex-start;
+    align-items: baseline;
+    overflow: hidden;
+}
+.attorneys .single-attorney img,
+.attorneys .single-attorney picture{
+	display: block;
+	position: relative;
+	transition:.2s all;
+	z-index: 2;
+}
+.attorneys .single-attorney:hover img,
+.attorneys .single-attorney:hover picture{
+	filter:none;
+	transform: scale(1.05);
+}
+.attorneys h2{
+	margin-bottom: 4rem;
+}
+.attorneys .single-attorney h3{
+	background:var(--white);
+	margin:0;
+	width: 100%;
+	padding:1rem;
+	font-size: 24px;
+	position: relative;
+	text-align: center;
+	z-index: 2;
+}
+
+.ppc-site-template .postion {
+    margin-top: 5px;
+}
+
+.attorneys .color-panel{
+	z-index: 1;
+    width: 100%;
+/*     height: 15rem; */
+	height: 100%;
+    top: 21%;
+}
+.attorneys .btn{
+	margin: 3rem auto auto;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/*
+.attorneys .single-attorney:nth-child(1),
+.attorneys .single-attorney:nth-child(5){
+	margin-left:12.5%;
+}
+.attorneys .single-attorney:nth-child(4),
+.attorneys .single-attorney:nth-child(8){
+	margin-right:12.5%;
+}
+*/
+.attorneys-to-move {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin:3rem 0;
+	background:var(--cream);
+	padding:2rem;
+}
+.attorneys-to-move a{
+	width: 32%;
+	text-align: center;
+	position: relative;
+	text-decoration: none;
+	color:var(--primary);
+}
+.attorneys-to-move a h3{
+	transition:.2s all;
+	position: relative;
+	font-size: 1.2rem;
+}
+.attorneys-to-move img,
+.attorneys-to-move picture{
+	transition:.2s all;
+	display: block;
+	position: relative;
+	z-index: 2;
+}
+.attorneys-to-move h3{
+	background: white;
+    margin: 0;
+    padding: 1.33rem 0;
+}
+.attorneys-to-move .color-panel{
+	height: 82%;
+}
+@media only screen and (max-width: 1024px) {
+	.attorneys .container .row{
+		justify-content: center;
+	}
+	.attorneys .single-attorney{
+		width: 31%;
+	}
+	.attorneys h2{
+		width:100%;
+	}
+}
+@media only screen and (max-width: 900px) {
+	.attorneys .container .row{
+		justify-content: space-between;
+	}
+	.attorneys .single-attorney{
+		width: 46%;
+	}
+	.attorneys .color-panel{
+		top:20%;
+	}
+	.attorneys-to-move a{
+		width: 49%;
+	}
+	.attorneys-to-move a h3{
+		font-size: 1rem;
+	}
+}
+
+
+
+
+
+/* Form */
+.form-cta .copy{
+	margin-top: 1.5rem;
+}
+.form-cta .arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid var(--lt-green);
+}
+
+.ppc-site-template .gform_wrapper.gravity-theme .gfield_label {
+    font-weight: 600;
+}
+
+/* Nascar */
+.nascar{
+	background:var(--lt-green);
+	padding-bottom: 0;
+}
+.nascar .single-logo{
+	width: 20%;
+}
+@media only screen and (max-width: 1100px) {
+	.nascar .single-logo{
+		width: 33.3%;
+		padding:0 1rem;
+	}
+	.nascar .single-logo img{
+		width: 100%;
+	}
+}
+/* Section Links */
+.section-links{
+	padding:0;
+}
+.section-links ul{
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background:var(--white);
+}
+.section-links li{
+	width: 50%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	position: relative;
+	padding: 0 2rem;
+	line-height: 1.5;
+	margin: .8rem 0;
+	align-items: center;
+}
+.section-links li:before{
+	content: '';
+	width: 40px;
+	height: 45px;
+	background: url(../assets/icon-checkmark.svg) no-repeat center center / 100%;
+	position: absolute;
+	left: -1rem;
+}
+.hide-for-desktop{
+	display: none;
+}
+@media only screen and (max-width: 1100px) {
+	.section-links{
+		padding:1rem;
+	}
+	.section-links .container{
+		width: 100%;
+	}
+	.single-ppc-site .section-links ul{
+		padding:0;
+		margin-bottom: 0;
+		padding-bottom: 2rem;
+		padding-top: 2rem;
+	}
+	.single-ppc-site .section-links ul li{
+		width: 90%;
+		margin:0 auto;
+		border:0;
+		padding: .875rem 0 1rem 3rem;
+	}
+	.section-links li:before{
+		left: 0;
+	}
+	.section-links h2{
+		display: none;
+	}
+	.section-links .form-cta h2{
+		display: inline-block;
+		font-size: 32px;
+	}
+	.section-links h2.hide-for-desktop{
+		display: block;
+		margin-top: 2rem;
+		margin-inline: auto;
+	}
+}
+/* Three column list */
+.three-column-list h2{
+	margin-bottom: 3rem;
+	margin-top: 0;
+}
+.three-column-list ul{
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
+.three-column-list ul li{
+	padding:1rem 0;
+	border-bottom: 1px dashed var(--dark-green);
+    font-size: 16px;
+}
+.three-column-list ul li:first-of-type{
+	padding-top:0;
+}
+.three-column-list ul li:last-of-type{
+	border:0;
+	padding-bottom:0;
+}
+@media only screen and (max-width: 1100px) {
+	.three-column-list{
+		text-align: center;
+	}
+	.three-column-list .text-right{
+		text-align: center;
+	}
+	.three-column-list img{
+		margin:2rem 0;
+	}
+}
+
+/* Attorneys */
+.attorneys{
+	background:var(--black-green);
+}
+.attorneys h2{
+	color:var(--white);
+}
+.attorneys .color-panel{
+	background:var(--green);
+}
+.attorneys-container{
+	width: 100%;
+}
+.attorneys-container .single-attorney{
+	width: 30%;
+	margin:0 1.5%;
+}
+.attorneys .color-panel{
+	top:25%;
+}
+/* .flickity-prev-next-button{
+	display: none;
+} */
+.attorneys .flickity-button:hover{
+	background: #394541;
+}
+
+@media only screen and (max-width: 1100px) {
+	.attorneys h2{
+		font-size: 28px;
+	}
+	.attorneys-container .single-attorney{
+		width: 100%;
+	}
+	.attorneys .color-panel{
+		top: 30%;
+	}
+	.attorneys .flickity-prev-next-button{
+		display: block;
+	}
+.attorneys .flickity-prev-next-button.next{
+	right: -10px;
+}
+	.attorneys .flickity-prev-next-button.previous{
+		left:-10px;
+	}
+}
+
+/* Colored Callout */
+.colored-callout .row{
+	padding:4rem;
+}
+.colored-callout h2{
+	margin-top: 2rem;
+}
+.colored-callout p,
+.colored-callout a{
+	color:var(--white);
+}
+@media screen and (max-width: 1100px) {
+	.colored-callout .row{
+		padding:2rem
+	}
+}
+
+/* Image Text panel */
+.image-text-panel h2 span{
+	color:var(--green);
+	font-size: 24px;
+	font-weight: 400;
+	letter-spacing: 2px;
+}
+
+/* Footer */
+footer{
+	margin-bottom:0;
+}
+footer .menu-policies-container a, footer .menu-policies-spanish-container a{
+	font-size: 14px;
+}
+@media screen and (max-width: 900px) {
+	.ppc-site-template.ppc-site-template-template-ppc-staattliches .mobile-cta a.btn.white {
+		color: var(--primary);
+	}
+
+	.ppc-site-template.ppc-site-template-template-ppc-staattliches .mobile-cta a.btn.white img.lazyloaded {
+		filter: unset;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.ppc-site-template-template-ppc-staattliches .tablet-display-820 {
+        display: block;
+    }
+
+	.ppc-site-template-template-ppc-staattliches section.hero .row {
+        justify-content: center;
+    }
+
+	.ppc-site-template-template-ppc-staattliches.single-ppc-site .hero h1 {
+		width: 100%;
+	}
+}

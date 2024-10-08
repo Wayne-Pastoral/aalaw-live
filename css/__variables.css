@@ -1,0 +1,13 @@
+:root{
+	--white: #FFFFFF;
+	--dirty_white: #F7F6F2;
+	--primary_green: #00A771;
+	--black-green: #1c1e1a;
+	--grey: #dee6e1;
+	--primary_black: #333333;
+	--black: #000000;
+	
+}
+.width100{
+	width: 100% !important;
+}

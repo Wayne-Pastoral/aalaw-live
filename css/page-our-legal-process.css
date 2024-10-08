@@ -1,0 +1,306 @@
+.remove-spacing {
+    margin: 0;
+    padding: 0;
+}
+
+section#shadow-host-companion {
+    left: -100%;
+}
+
+
+/*===================================
+    Sidebar
+===================================*/
+
+.case-result__heading {
+    text-align: center;
+}
+
+.case-result {
+    background: #F7F6F2;
+    margin-bottom: 2rem;
+}
+
+.case-result__headings {
+    padding: 30px 0 10px;
+}
+
+.case-result__link {
+    text-decoration: none;
+}
+
+.case-result__item {
+    border-bottom: 1px solid #CDCDC9;
+    padding: 20px 30px;
+}
+
+.case-result__item:last-child {
+    border-bottom: none;
+}
+
+.case-result__date {
+    font-size: 16px;
+    color: #2A2C27;
+    opacity: 0.5;
+    margin-top: 10px;
+}
+
+
+/*===================================
+Legal Section
+===================================*/
+.legal-process__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 70px;
+}
+
+.legal-process__item {
+    display: flex;
+    gap: 30px;
+}
+
+.legal-process__heading {
+    margin-top: 3.4rem;
+    margin-bottom: 2rem;
+}
+
+.legal-process__heading  p {
+    margin: 0;
+    padding: 0;
+}
+
+.legal-process__image-container {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.legal-process__item.legal-process--right .legal-process__image-container {
+    flex-direction: row-reverse;
+}
+
+.legal-process__images-container {
+    width: 110px;
+    position: relative;
+}
+
+.legal-process__image {
+    width: 100%;
+    object-fit: contain;
+}
+
+.legal-process__process-heading {
+    color: #00A771;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+
+.legal-process__process-description p {
+    margin: 0;
+    padding: 0;
+}
+
+.legal-process__number {
+    background: #000;
+    color: #fff;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    line-height: 0;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 3px #00a771;
+    font-size: 1.5rem;
+}
+
+.page-template-page-our-legal-process .gmbreviews__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.page-template-page-our-legal-process .gmbreviews__headings {
+    width: 80%;
+}
+
+.page-template-page-our-legal-process .gmbreviews__google-reviews {
+    width: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.gmbreviews__google img {
+    object-fit: contain;
+    min-width: 90px;
+}
+
+.page-template-page-our-legal-process .gmbreviews__google-reviews .starrating {
+    height: 24px;
+}
+
+.page-template-page-our-legal-process .starrating__rating {
+    font-size: 32px;
+    color: #FEA500;
+    line-height: normal;
+}
+
+.page-template-page-our-legal-process .gmbreviews__google {
+    display: flex;
+    align-items: start;
+}
+
+.page-template-page-our-legal-process .review-count {
+    color: #868686;
+    font-size: 14px;
+}
+
+.page-template-page-our-legal-process .gmbreviews__headings h2 {
+    text-align: left;
+    margin: 0;
+    padding-bottom: 0.6rem;
+}
+
+.page-template-page-our-legal-process .gmbreviews__headings p {
+    margin: 0;
+    padding-bottom: 0.2rem;
+}
+
+.page-template-page-our-legal-process .starrating-main p {
+    margin: 0;
+}
+
+.page-template-page-our-legal-process .starrating-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-template-page-our-legal-process .gmbreviews {
+    padding-bottom: 130px;
+    margin: 0;
+    background: #F7F6F2;
+}
+
+.page-template-page-our-legal-process #GMBReviews .rwrap {
+    background: #fff;
+}
+
+.gmbreviews__container-main {
+    background: #F7F6F2;
+    padding-top: 70px;
+}
+
+@media (max-width: 1180px) {
+    .page-template-page-our-legal-process .gmbreviews {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .gmbreviews__container-main {
+        padding-top: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-template-page-our-legal-process .gmbreviews__container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .page-template-page-our-legal-process .gmbreviews__headings h2 {
+        text-align: center;
+    }
+
+    .page-template-page-our-legal-process .gmbreviews__headings,
+    .page-template-page-our-legal-process .gmbreviews__google-reviews {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .legal-process__image {
+        filter: brightness(0) saturate(100%) invert(41%) sepia(59%) saturate(1065%) hue-rotate(121deg) brightness(99%) contrast(101%);
+    }
+    .legal-process__number-container {
+        display: none;
+    }
+
+    .legal-process__container {
+        row-gap: 0;
+    }
+
+    .legal-process__item {
+        flex-direction: column;
+        border-bottom: 1px solid #00A771;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .legal-process__item:first-child {
+        padding-top: 30px;
+    }
+
+    .legal-process__images-container:after {
+        content: "";
+        background: #00A7711A;
+        width: 180px;
+        height: 180px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        border: 15px solid #fff;
+        outline: 2px solid #00A771;
+    }
+
+    .legal-process__image-container {
+        justify-content: center;
+    }
+
+    .legal-process__images-container {
+        width: 70px;
+    }
+
+    .legal-process__image-container-main {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .legal-process__heading {
+        margin-top: 2.4rem;
+        margin-bottom: 0;
+    }
+}
+
+.banner-cta-legal-process__heading {
+    font-size: 1.5rem;
+    margin: 0;
+    max-width: 700px;
+    text-align: center;
+    display: block;
+    margin-inline: auto;
+}
+
+.banner-cta-legal-process__description {
+    text-align: center;
+    max-width: 900px;
+    margin: 0;
+    margin-top: 15px;
+}
+
+.banner-cta-legal-process__description a {
+    color: #00A771;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+}

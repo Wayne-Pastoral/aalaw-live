@@ -1,0 +1,207 @@
+.posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap value to make the space between items shorter */
+    padding: 0;
+    margin: 0 auto;
+    max-width: 100%; /* Ensure the container doesn't exceed the full width */
+}
+
+.posts-container > * {
+    flex: 1 1 auto; /* Allow the items to grow and shrink as needed */
+    margin: 0 0; /* Adjust the margin to reduce space between cards */
+}
+.post-card {
+    flex: 0 1 31%; /* Adjust the percentage to control the column width */
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Adjust the margin as needed */
+    border-radius: 5px; /* Optional: Add border radius to cards */
+    background: #F7F6F2;
+    position: relative;
+}
+
+.post-card  article {
+    padding: 0 0;
+}
+.post-card  article img {
+    height: 242px;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 601px) {
+.post-card .read-more-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 50%; /* Move the left edge to the center of the parent */
+    transform: translateX(-50%); /* Shift it left by half its width */
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Set to auto to avoid stretching */
+}
+}
+.post-card .read-more-btn a {
+    margin-top: 20px;
+    display: flex;
+    width: 65%;
+    justify-content: center;
+    color: #fff !important;
+    background: #00a871 !important;
+    padding: 9px 14px;
+    border: unset !important;
+    font-size: 14px;
+}
+.post-card .tags-item {
+    height: 450px;
+    padding: 10px 20px;
+}
+.tags-item .align-right {
+    float: right;
+}
+
+.post-card .tags-item p {
+    font-size: 14px;
+    font-family: 'adrianna';
+    font-weight: normal;
+}
+
+.post-card  .tags-item h2 a {
+    color: #00A871 !important;
+    font-weight: 700;
+    font-family: 'adrianna';
+}
+.post-card .meta .cats {
+    font-size: 17px;
+    font-weight: 700;
+    font-family: 'adrianna';
+    text-transform: none;
+
+}
+.post-card .tags-item h2 {
+    font-size: 18px;
+    text-align: center;
+    font-family: 'adrianna';
+}
+.post-card .tags-item hr {
+    margin: 32px 0 20px;
+}
+.blog-pagination {
+    width: 100%;
+    text-align: center;
+}
+ .pagination {
+    margin: 0 21px;
+}
+.blog-pagination .wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.blog-pagination .pagination .current {
+    background-color: #00A871 !important;
+    font-weight: 700 !important;
+    color: #fff !important; 
+}
+.blog-pagination .pagination .page-numbers, .blog-pagination .last-paging, .blog-pagination .paging a ,.pagination a{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #F7F6F2;
+    margin: 0 5px;
+    color: #000;
+    text-align: center;
+    line-height: 50px;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+}
+a.home-btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    color: #00A871;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.title-tags {
+    width: 100%;
+    text-align: center;
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    line-height: 1.3;
+    font-weight: 300;
+}
+.blog-pagination span {
+    font-size: 17px;
+    color: #2A2C27;
+    font-family: 'adrianna';
+}
+.tag-sub-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+span.blog-category {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'adrianna';
+}
+h1.blog-category-title {
+    font-size: 48px;
+    font-weight: 500;
+    color: #2A2C27;
+    font-family: 'adrianna';
+}
+
+
+/* Optional: Add some styling for mobile responsiveness */
+@media (max-width: 1200px) {
+    .post-card .tags-item {
+         height: 630px;
+    }
+    .post-card .tags-item h2 {
+        height: 52px;
+    }
+}
+@media (max-width: 991px) {
+    .blog-pagination .wrap {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .post-card {
+        flex: 0 1 46%; /* Two columns on smaller screens */
+    }
+}
+@media (max-width: 600px) {
+    .post-card {
+        flex: 0 1 100%; /* Two columns on smaller screens */
+    }
+    .post-card .tags-item {
+        height: auto !important;
+    }
+    .post-card .read-more-btn {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin: 10px 0 30px; 
+    }
+}
+@media (max-width: 600px) {
+    .post-card .tags-item { 
+        height: 455px;
+    }
+}
+@media (max-width: 480px) {
+    .post-card {
+        flex: 0 1 100%; /* One column on very small screens */
+    }
+}

@@ -1,0 +1,466 @@
+.ppc-site-template-template-ppc-old-layout, .ppc-site-template-template-single-ppc {
+  --lt-green: #DEE6E1;
+  --green: #00A475;
+  --dark-green: #095741;
+  --black-green: #1C1E1A;
+  --white: #FFFFFF;
+}
+
+/*--------------------------------------------------------------
+# Text Colors
+--------------------------------------------------------------*/
+.lt-green{
+	color:var(--lt-green)
+}
+.green{
+	color:var(--green);
+}
+.dark-green{
+	color:var(--dark-green);
+}
+.black-green{
+	color:var(--black-green);
+}
+.white{
+	color:var(--white);
+}
+
+/*--------------------------------------------------------------
+# Background Colors
+--------------------------------------------------------------*/
+.bg-lt-green{
+	background:var(--lt-green)
+}
+.bg-green{
+	background:var(--green);
+}
+.bg-dark-green{
+	background:var(--dark-green);
+}
+.bg-black-green{
+	background:var(--black-green);
+}
+.bg-white{
+	background:var(--white);
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+h1, 
+.hero h1{
+	font-size: 36px;
+	font-weight: 700;
+}
+.large-header{
+	font-size: 40px;
+	font-weight: 600;
+	line-height: 1;
+	text-decoration: none;
+}
+h2{
+	font-size: 30px;
+	font-weight: 600;
+}
+h3{
+	font-size: 26px;
+	font-weight: 600;
+	margin:0;
+}
+h4{
+	font-size: 20px;
+	font-weight: 400;
+}
+p.large{
+	font-size: 24px;
+	font-weight: 300;
+	letter-spacing: 2px;
+}
+p{
+	font-size: 16px;
+	font-weight: 400;
+	margin:0;
+}
+p.small{
+	font-size: 14px;
+	font-weight: 300;
+}
+p.medium{
+	font-size: 20px;
+	letter-spacing: 2px;
+	font-weight: 300;
+}
+.caption{
+	font-size: 18px;
+	font-weight: 300;
+}
+.button{
+	font-size: 20px;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.phone-call img {
+    width: 100%;
+    max-width: 50px;
+}
+/* Spacing */
+h3 + p{
+	margin-top: 0;
+}
+
+section{
+	padding:5rem 0;
+}
+blackcircle{
+	bottom: 60px !important;
+	z-index: 10;
+}
+
+@media only screen and (max-width: 1100px) {
+	h1{
+		font-size: 60px;
+	}
+	h2{
+		font-size: 32px;
+	}
+}
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+/* Base */
+.container{
+	width: 78%;
+	max-width: none;
+}
+.single-ppc-site .hero{
+	padding: 0px;
+}
+.single-ppc-site .hero .container{
+	padding: 10rem 0px;
+}
+@media screen and (max-width: 1100px) {
+	.grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12, .grid-13, .grid-14, .grid-15, .grid-16{
+		width: 100%;
+	} 
+	.container{
+		width: 90%;
+	}
+}
+
+/* Header */
+/* .single-ppc-site header{
+	background:var(--white);
+}
+.single-ppc-site header .logo img{
+	filter:none;
+}
+@media screen and (max-width: 1100px) {
+	.single-ppc-site header .phone-call{
+		flex-direction: row;
+		margin-top: 1rem;
+	}
+	.single-ppc-site header .logo img{
+		width: 100%;
+	}
+} */
+
+/* Hero */
+/* .hero{
+	margin-top: 5rem;
+}
+.hero{
+	padding-bottom: 3rem;
+} */
+.form-cta{
+	margin-top: -25.4rem;
+}
+@media screen and (max-width: 1100px) {
+	
+	.single-ppc-site .form-cta .copy{
+		margin: 1rem auto 0 auto;
+	}
+	.single-ppc-site .hero{
+/* 		margin-top: 148px;
+		padding:7.5rem 0; */
+	}
+	.single-ppc-site .hero h1{
+		font-size: 28px;
+	}
+	.form-cta p.large,
+	.form-cta h3{
+		background:var(--white);
+		color:var(--black-green);
+	}
+	.form-cta p.large{
+		padding-bottom: 3rem;
+	}
+}
+/* accordition */
+.custom-accordion-content p {
+    margin-bottom: 15px;
+}
+.custom-accordion-content p:last-child {
+    margin-bottom: 0;
+}
+.panel-carousel h2.thin {
+    font: 300 36px/47px Adrianna !important;
+}
+/* Numbers Carousel */
+.numbers-carousel{
+	background:var(--black-green);
+	padding:2rem;
+}
+.numbers-carousel .number{
+	color:var(--white);
+}
+.numbers-carousel h2{
+	color:var(--green);
+	margin:0;
+	font-size: 26px;
+	font-weight: 600;
+}
+@media only screen and (max-width: 1100px) {
+	.numbers-carousel{
+		padding:2rem 0;
+	}
+	.numbers-carousel .grid-3{
+		width: 30%;
+		padding:0;
+		margin-bottom: 0;
+	}
+	.numbers-carousel .number{
+		font-size: 2rem;
+		
+	}
+	.flickity-page-dots{
+		display: none;
+	}
+	.numbers-carousel h2{
+		font-size: 18px;
+	}
+	.nascar .flickity-page-dots{
+		display: none;
+	}
+}
+/* Form */
+.form-cta .copy{
+	margin-top: 2rem;
+}
+.form-cta .arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid var(--lt-green);
+}
+
+/* Nascar */
+.nascar{
+	background:var(--lt-green);
+	padding-bottom: 0;
+}
+.nascar .single-logo{
+	width: 20%;
+}
+@media screen and (max-width: 1024px) {
+	.single-ppc-site .form-cta {
+    margin-top: -2rem !Important;
+    padding-bottom: 0;
+}
+}
+@media only screen and (max-width: 1100px) {
+	.nascar .single-logo{
+		width: 33.3%;
+		padding:0 1rem;
+	}
+	.nascar .single-logo img{
+		width: 100%;
+	}
+}
+/* Section Links */
+.section-links{
+	padding:0;
+}
+.section-links ul{
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background:var(--white);
+}
+.section-links li{
+	width: 50%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	position: relative;
+	padding: 0 2rem;
+	line-height: 1.5;
+	margin: .8rem 0;
+	align-items: center;
+}
+.section-links li:before{
+	content: '';
+	width: 40px;
+	height: 45px;
+	background: url(../assets/icon-checkmark.svg) no-repeat center center / 100%;
+	position: absolute;
+	left: -1rem;
+}
+.hide-for-desktop{
+	display: none;
+}
+@media only screen and (max-width: 1100px) {
+	.section-links{
+		padding:1rem;
+	}
+	.section-links .container{
+		width: 100%;
+	}
+	.single-ppc-site .section-links ul{
+		padding:0;
+		margin-bottom: 0;
+		padding-bottom: 2rem;
+	}
+	.single-ppc-site .section-links ul li{
+		width: 90%;
+		margin:0 auto;
+		border:0;
+		padding: .875rem 0 1rem 3rem;
+	}
+	.section-links li:before{
+		left: 0;
+	}
+	.section-links h2{
+		display: none;
+	}
+	.section-links .form-cta h2{
+		display: inline-block;
+		font-size: 32px;
+	}
+	.section-links h2.hide-for-desktop{
+		display: inline-block;
+		margin-top: 2rem;
+	}
+}
+/* Three column list */
+.three-column-list h2{
+	margin-bottom: 3rem;
+	margin-top: 0;
+}
+.three-column-list ul{
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
+.three-column-list ul li{
+	padding:1rem 0;
+	border-bottom: 1px dashed var(--dark-green);
+}
+.three-column-list ul li:first-of-type{
+	padding-top:0;
+}
+.three-column-list ul li:last-of-type{
+	border:0;
+	padding-bottom:0;
+}
+@media only screen and (max-width: 1100px) {
+	.three-column-list{
+		text-align: center;
+	}
+	.three-column-list .text-right{
+		text-align: center;
+	}
+	.three-column-list img{
+		margin:2rem 0;
+	}
+}
+
+/* Attorneys */
+.attorneys{
+	background:var(--black-green);
+}
+.attorneys h2{
+	color:var(--white);
+}
+.attorneys .color-panel{
+	background:var(--green);
+}
+.attorneys-container{
+	width: 100%;
+}
+.attorneys-container .single-attorney{
+	width: 30%;
+	margin:0 1.5%;
+}
+.attorneys .color-panel{
+	top:25%;
+}
+.flickity-prev-next-button{
+	display: none;
+}
+@media only screen and (max-width: 1100px) {
+	.attorneys h2{
+		font-size: 28px;
+	}
+	.attorneys-container .single-attorney{
+		width: 100%;
+	}
+	.attorneys .color-panel{
+		top: 30%;
+	}
+	.attorneys .flickity-prev-next-button{
+		display: block;
+	}
+	.attorneys .flickity-prev-next-button.previous{
+		left:0rem;
+		right: auto;
+	}
+	.attorneys .flickity-prev-next-button{
+		top:70px;
+	}
+}
+
+/* Colored Callout */
+.colored-callout .row{
+	padding:4rem;
+}
+.colored-callout h2{
+	margin-top: 2rem;
+}
+.colored-callout p,
+.colored-callout a{
+	color:var(--white);
+}
+@media screen and (max-width: 1100px) {
+	.colored-callout .row{
+		padding:2rem
+	}
+}
+
+/* Image Text panel */
+.image-text-panel h2 span{
+	color:var(--green);
+	font-size: 24px;
+	font-weight: 400;
+	letter-spacing: 2px;
+}
+
+/* Footer */
+footer{
+	margin-bottom:0;
+}
+footer .menu-policies-container a, footer .menu-policies-spanish-container a{
+	font-size: 14px;
+}
+
+@media screen and (min-width: 1740px) {
+	 .single-ppc-site .hero {
+		min-height: 660px !important;
+		display: flex;
+		align-items: center;
+	}
+}

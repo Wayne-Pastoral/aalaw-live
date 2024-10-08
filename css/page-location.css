@@ -1,0 +1,122 @@
+.card-container-location.Texas {pointer-events: none;}
+a{
+	text-decoration:none;
+}
+.page-template-page-locations-template .entry-content {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.top-title {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'adrianna';
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #5E676F;
+}  
+.location-title-item {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 1rem !important;
+    font-family: 'adrianna';
+    color: #00a771 !important;
+    display: inline-block;
+    border-bottom: 1px solid #00a771;
+}
+p.location-phone {
+    margin-bottom: 1rem !important;
+}
+.location-address,
+.location-phone{
+    font-size: 14px;
+    font-family: 'adrianna';
+    color: #2A2C27;
+    font-weight: 400;
+    margin: 0 !important;
+    padding: 0;
+}
+.location-container {
+      height: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+.cpia p span {
+	color: var(--secondary);
+	font-weight: 700 !important;
+}
+.cpia p span a{
+	color: var(--secondary);
+	font-weight: 700 !important;
+}
+.top-decs p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'adrianna';
+}
+.container-location {
+    margin: 0 auto;
+  }
+
+  .top-title {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .card-container-location {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+	      margin-bottom: 2rem;
+  }
+
+  .card-location {
+    width: calc(50% - 16px);
+    margin: 10px 0 0 0;
+  }
+.card-location:nth-child(odd) {
+    margin-right: 1.5rem;
+}
+.location-personal-injurycontent{
+	padding: 2rem 0 4rem;
+    background: #F7F6F2;
+}
+section.location-personal-injurycontent h2 {
+    text-align: center;
+    width: 100%;
+    font-size: 32px;
+    font-weight: 300;
+    font-family: 'adrianna';
+}
+section.location-personal-injurycontent h2 {
+    text-align: center;
+    width: 100%;
+    font-size: 32px;
+    font-weight: 300;
+    font-family: 'adrianna';
+}
+@media (max-width: 1024px) {
+		  .location-container {
+    width: 86.1% !Important;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+}
+  @media (max-width: 768px) {
+    .card-location {
+      width: 100%;
+	  margin: 10px 0;
+    }
+	 .location-container {
+    width: auto;
+    padding: 0 20px;
+	}
+	  .card-location:nth-child(odd) {
+    margin-right: 0;
+	}
+	  .top-decs p {
+    text-align: center;
+}
+
+  }
