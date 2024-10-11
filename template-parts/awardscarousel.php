@@ -9,7 +9,7 @@ $awards = get_posts($awardsargs);
 if ($awards) :
 ?>
 
-	<div class="awards-carousel">
+	<div class="awards-carousel" aria-label="Awards Carousel">
 		<?php 
 		if (
 			$post->post_parent != '4256' &&
@@ -31,13 +31,13 @@ if ($awards) :
 			?>
 		</div>
 		<?php endif; ?>
-		<div class="owl-carousel">
+		<div class="owl-carousel" aria-label="Award Logos">
 			<?php
 			foreach ($awards as $award) :
 				$show = get_field('status', $award->ID);	
 				$awardlogo = wp_get_attachment_image_src( get_post_thumbnail_id( $award->ID ), 'full' );
 				if ($show != 'true') {
-					echo '<div class="item '.$award->post_name.'"><span><em><img src="'.$awardlogo[0].'" alt="" /></em></span></div>';
+					echo '<div class="item '.$award->post_name.'"><span><em><img src="'.$awardlogo[0].'" alt="Award Logo" /></em></span></div>';
 				}
 			endforeach;
 			?>
@@ -46,3 +46,4 @@ if ($awards) :
 
 <?php
 endif;
+?>

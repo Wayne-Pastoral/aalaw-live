@@ -26,15 +26,23 @@
 			<div class="row">
 			<section class="entry-content <?php echo is_tag() ? '' : 'grid-10'; ?> copy">
 					<?php 
-						$separator = "<span class='bcrumbs-separator'> &#187; </span>";
+						$separator = "<span class='bcrumbs-separator' aria-hidden='true'> &#187; </span>";  // Make separator hidden to screen readers
 						$faqterm = get_queried_object();
 						$faqtext = get_locale() == "en_US" ? "Frequently Asked Questions" : "Preguntas Frecuentes";
+
 						if (is_tax('faqtag')) :
-							echo '<div id="breadcrumbs"><a href="'.home_url().'">Home</a>'.$separator.'<a href="'.home_url().'/faqs">'.$faqtext.'</a>'.$separator.'<strong>'.$faqterm->name.'</strong></div>';
+							echo '<div id="breadcrumbs" aria-label="Breadcrumbs">';  // Add aria-label for the entire breadcrumbs container
+							echo '<a href="'.home_url().'" aria-label="Home">Home</a>';  // Add aria-label to the Home link
+							echo $separator;
+							echo '<a href="'.home_url().'/faqs" aria-label="'.$faqtext.'">'.$faqtext.'</a>';  // Add aria-label to the FAQs link
+							echo $separator;
+							echo '<strong aria-current="page">'.$faqterm->name.'</strong>';  // Mark the current page with aria-current
+							echo '</div>';
 						else :
-							echo do_shortcode('[custom_breadcrumbs]');
+							echo do_shortcode('[custom_breadcrumbs]');  // Use the custom breadcrumbs function that is already updated
 						endif;
 					?>
+
 					<?php if ( is_tag() ) : ?>
 							<div class="tag-sub-title">
 								<span class="blog-category">Blog Category</span>

@@ -56,19 +56,19 @@
 		<?php if ( is_page_template('template-ppc-old-layout-old-colors.php') ) { ?>
 		<div class="mobile-cta bg-grey">
 			<?php if (get_locale() == 'en_US') { ?>
-			<a href="tel:<?php the_field('ppc_phone_number','options'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/icon-phone-green.png">Tap to Call</a>
+			<a href="tel:<?php the_field('ppc_phone_number','options'); ?>" aria-label="Tap to Call <?php the_field('ppc_phone_number','options'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/icon-phone-green.png">Tap to Call</a>
 			<?php } else { ?>
-			<a href="tel:<?php the_field('ppc_phone_number','options'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/icon-phone-green.png">Toca para Llamar</a>
+			<a href="tel:<?php the_field('ppc_phone_number','options'); ?>" aria-label="Toca para Llamar <?php the_field('ppc_phone_number','options'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/icon-phone-green.png">Toca para Llamar</a>
 			<?php } ?>
 		</div>
 		<?php } else { ?>
 		<div class="mobile-cta bg-green">
 			<?php if (get_locale() == 'en_US') { ?>
 			Free Consultation
-			<a href="tel:<?php the_field('ppc_phone_number','options'); ?>" class="btn white m_orange"><img src="<?php echo get_template_directory_uri(); ?>/assets/icon-phone.svg">Call Now</a>
+			<a href="tel:<?php the_field('ppc_phone_number','options'); ?>" class="btn white m_orange" aria-label="Call Now <?php the_field('ppc_phone_number','options'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/icon-phone.svg">Call Now</a>
 			<?php } else { ?>
 			Consulta Gratis
-			<a href="tel:<?php the_field('ppc_phone_number','options'); ?>" class="btn white m_orange"><img src="<?php echo get_template_directory_uri(); ?>/assets/icon-phone.svg">Llama Ahora</a>
+			<a href="tel:<?php the_field('ppc_phone_number','options'); ?>" class="btn white m_orange" aria-label="Llama Ahora <?php the_field('ppc_phone_number','options'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/icon-phone.svg">Llama Ahora</a>
 			<?php } ?>
 		</div>
 		<?php } ?>

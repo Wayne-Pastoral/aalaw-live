@@ -331,6 +331,7 @@ function nofollow_category( $text ) {
 $text = str_replace('rel="category tag"', 'rel="nofollow"', $text);
 return $text;
 }
+
 function my_custom_breadcrumbs(){
 	
 	global $post;
@@ -338,72 +339,50 @@ function my_custom_breadcrumbs(){
 	$page = "";
 	$parent_link = "";
 	
-	$home_link = "<a href='" . home_url() . "'>Home</a>";
+	$home_link = "<a href='" . home_url() . "' aria-label='Home'>Home</a>";
 	
-	$separator = "<span class='bcrumbs-separator'> &#187; </span>";
+	$separator = "<span class='bcrumbs-separator' aria-hidden='true'> &#187; </span>";
 
 	$parents = array_reverse(get_post_ancestors($post->ID));	
 	
 	if(!is_front_page()){
 		
+		// Loop through parent ancestors
 		foreach ($parents as $vals) {
 			$vals = array($vals);
 			for ($i = 0; $i < count($vals); $i++) {
 				$title = html_entity_decode(get_the_title($vals[$i]));
 				if ($title !== 'Traffic') {
-					$page .= "<a href='" . get_the_permalink($vals[$i]) . "'>" . $title . "</a>" . $separator;
+					$page .= "<a href='" . get_the_permalink($vals[$i]) . "' aria-label='" . esc_attr($title) . "'>" . $title . "</a>" . $separator;
 				}
 			}
 		}
-		
+
+		// Add parent link based on post type
 		if (get_post_type() == 'locations'){
-			if(get_locale() == "en_US"){
-				$parent_link = "<a href='" . get_the_permalink(24972) . "'>".html_entity_decode(get_the_title(24972)) . "</a>";
-			}else{
-				$parent_link = "<a href='" . get_the_permalink(24972) . "'>".html_entity_decode(get_the_title(24972)) . "</a>";
-			}
+			$parent_link = "<a href='" . get_the_permalink(24972) . "' aria-label='" . esc_attr(get_the_title(24972)) . "'>" . html_entity_decode(get_the_title(24972)) . "</a>";
 		}
 		if (get_post_type() == 'accidents'){
-			if(get_locale() == "en_US"){
-				$practice_areas = "<a href='" . get_the_permalink(4256) . "'>".html_entity_decode(get_the_title(4256)) . "</a>";
-			}else{
-				$practice_areas = "<a href='" . get_the_permalink(4432) . "'>".html_entity_decode(get_the_title(4432)) . "</a>";
-			}
+			$practice_areas = "<a href='" . get_the_permalink(4256) . "' aria-label='" . esc_attr(get_the_title(4256)) . "'>" . html_entity_decode(get_the_title(4256)) . "</a>";
 			$parent_link = $practice_areas;	
 		}
 		if (get_post_type() == 'injuries'){
-			if(get_locale() == "en_US"){
-				$practice_areas = "<a href='" . get_the_permalink(4256) . "'>".html_entity_decode(get_the_title(4256)) . "</a>";
-			}else{
-				$practice_areas = "<a href='" . get_the_permalink(4432) . "'>".html_entity_decode(get_the_title(4432)) . "</a>";
-			}
+			$practice_areas = "<a href='" . get_the_permalink(4256) . "' aria-label='" . esc_attr(get_the_title(4256)) . "'>" . html_entity_decode(get_the_title(4256)) . "</a>";
 			$parent_link = $practice_areas;	
 		}
 		if (get_post_type() == 'case_results'){
-			if(get_locale() == "en_US"){
-				$parent_link = "<a href='" . get_the_permalink(7296) . "'>".html_entity_decode(get_the_title(7296)) . "</a>";
-			}else{
-				$parent_link = "<a href='" . get_the_permalink(9783) . "'>".html_entity_decode(get_the_title(9783)) . "</a>";
-			}
+			$parent_link = "<a href='" . get_the_permalink(7296) . "' aria-label='" . esc_attr(get_the_title(7296)) . "'>" . html_entity_decode(get_the_title(7296)) . "</a>";
 		}
 		if (get_post_type() == 'attorneys'){
-			if(get_locale() == "en_US"){
-				$parent_link = "<a href='" . get_the_permalink(39) . "'>".html_entity_decode(get_the_title(39)) . "</a>";
-			}else{
-				$parent_link = "<a href='" . get_the_permalink(4429) . "'>".html_entity_decode(get_the_title(4429)) . "</a>";
-			}
+			$parent_link = "<a href='" . get_the_permalink(39) . "' aria-label='" . esc_attr(get_the_title(39)) . "'>" . html_entity_decode(get_the_title(39)) . "</a>";
 		}
 		if (get_post_type() == 'faqs'){
-			if(get_locale() == "en_US"){
-				$parent_link = "<a href='" . get_the_permalink(4689) . "'>".html_entity_decode(get_the_title(4689)) . "</a>";
-			}else{
-				$parent_link = "<a href='" . get_the_permalink(4728) . "'>".html_entity_decode(get_the_title(4728)) . "</a>";
-			}
+			$parent_link = "<a href='" . get_the_permalink(4689) . "' aria-label='" . esc_attr(get_the_title(4689)) . "'>" . html_entity_decode(get_the_title(4689)) . "</a>";
 		}
 		if (is_category()){
-			$parent_link = "<a href='" . get_permalink( get_option( 'page_for_posts' ) ) . "'>". html_entity_decode(get_the_title( get_option('page_for_posts', true))) . "</a>";
- 			$queried_object = get_queried_object();
-            $term_id = $queried_object->term_id;
+			$parent_link = "<a href='" . get_permalink( get_option( 'page_for_posts' ) ) . "' aria-label='" . esc_attr(get_the_title( get_option('page_for_posts', true))) . "'>" . html_entity_decode(get_the_title( get_option('page_for_posts', true))) . "</a>";
+			$queried_object = get_queried_object();
+			$term_id = $queried_object->term_id;
 			
 			$child = get_category($term_id); 			
 			$ancestors = array_reverse(get_ancestors( $term_id, 'category' )); 
@@ -420,28 +399,26 @@ function my_custom_breadcrumbs(){
 			}
 
 			foreach($categories as $cats){
-				$page .= "<a href='" . $cats['link'] . "'>" . ucfirst($cats['name']) . "</a>" . $separator;
+				$page .= "<a href='" . $cats['link'] . "' aria-label='" . esc_attr($cats['name']) . "'>" . ucfirst($cats['name']) . "</a>" . $separator;
 			}
-			$page .= "<strong class='breadcrumb_last'>" . html_entity_decode(strip_tags($child->name)) . "</strong>";
+			$page .= "<strong class='breadcrumb_last' aria-current='page'>" . html_entity_decode(strip_tags($child->name)) . "</strong>";
 		}
 		
  		if (!is_category()){
-			$page .= "<strong class='breadcrumb_last'>" . html_entity_decode(get_the_title($post->id)) . "</strong>";
+			$page .= "<strong class='breadcrumb_last' aria-current='page'>" . html_entity_decode(get_the_title($post->id)) . "</strong>";
 		}
 		
 		if  (is_tax('faqtag')) {
 			$faqterm = get_queried_object();
 			$faqtext = get_locale() == "en_US" ? "Frequently Asked Questions" : "Preguntas Frecuentes";
-			$output = '<div id="breadcrumbs"><a href="'.home_url().'">Home</a>'.$separator.'<a href="'.home_url().'/faqs">'.$faqtext.'</a>'.$separator.'<strong>'.$faqterm->name.'</strong></div>';
+			$output = '<div id="breadcrumbs" aria-label="Breadcrumbs"><a href="'.home_url().'" aria-label="Home">Home</a>'.$separator.'<a href="'.home_url().'/faqs" aria-label="FAQs">'.$faqtext.'</a>'.$separator.'<strong>'.$faqterm->name.'</strong></div>';
 		} else {
-			$output = "<div id='breadcrumbs'>" . $home_link . $separator . $parent_link . $separator . $page . "</div>";
+			$output = "<div id='breadcrumbs' aria-label='Breadcrumbs'>" . $home_link . $separator . $parent_link . $separator . $page . "</div>";
 		}
-		
-		$output = "<div id='breadcrumbs'>" .$home_link . $separator . $parent_link . $separator . $page. "</div>";
 		
 		if (get_post_type() == 'page' || get_post_type() == 'post' && !is_category()){
 			if ( function_exists('yoast_breadcrumb') ) {
-			  $output = yoast_breadcrumb('<div id="breadcrumbs">','</div>');
+			  $output = yoast_breadcrumb('<div id="breadcrumbs" aria-label="Breadcrumbs">','</div>');
 			} 	
 		}
 	}
@@ -912,7 +889,7 @@ function custom_blog_and_faq_shortcode() {
                     </div>
                     <div class='custom-accordion-content'>
                         <?php echo esc_html(wp_trim_words($post_object->post_content, 30)); ?>
-                        <a href="<?php echo esc_url(get_permalink($post_object->ID)); ?>" class="continue-read"><?php _e('Continue Reading', 'your-text-domain'); ?></a>
+                        <a href="<?php echo esc_url(get_permalink($post_object->ID)); ?>" class="continue-read" aria-label="Continue Reading: <?php echo esc_attr($post_object->post_title); ?>"><?php _e('Continue Reading', 'your-text-domain'); ?></a>
                     </div>
                 </div>
                 <!--  end of faq -->
@@ -943,13 +920,13 @@ function custom_blog_and_faq_shortcode() {
                     <div class="blog-inner blog-single_slider">
                         <div class="blog-image lazyloaded" data-bg="<?php echo esc_url($url); ?>" style="background-image: url(<?php echo esc_url($url); ?>);"></div>
                         <div class="blog-inner-meta">
-                            <h3 class="blog-title"><a href="<?php echo esc_url(get_permalink($blogs->ID)); ?>"><?php echo esc_html($blogs->post_title); ?></a></h3>
+                            <h3 class="blog-title"><a href="<?php echo esc_url(get_permalink($blogs->ID)); ?>" aria-label="Read Blog: <?php echo esc_attr($blogs->post_title); ?>"><?php echo esc_html($blogs->post_title); ?></a></h3>
                             <div class="blog-meta">
                                 <p class="blog-date"><?php echo esc_html(get_the_date('F j, Y', $blogs->ID)); ?></p>
                                 <p class="blog-author"><?php _e('By', 'your-text-domain'); ?>: <?php echo esc_html(get_the_author_meta('display_name', $blogs->post_author)); ?></p>
                             </div>
                             <p class="blog-description"><?php echo esc_html(wp_trim_words($blogs->post_content, 30)); ?></p>
-                            <a href="<?php echo esc_url(get_permalink($blogs->ID)); ?>"><?php _e('Read Blog &gt;', 'your-text-domain'); ?></a>
+                            <a href="<?php echo esc_url(get_permalink($blogs->ID)); ?>" aria-label="Read Blog: <?php echo esc_attr($blogs->post_title); ?>"><?php _e('Read Blog &gt;', 'your-text-domain'); ?></a>
                         </div>
                     </div>
                     <?php } ?>
@@ -976,7 +953,7 @@ function custom_blog_and_faq_shortcode() {
 													<p class="blog-author">By: <?php echo esc_html(get_the_author_meta('display_name', $blogs->post_author)); ?></p>
 												</div>
 												<p class="p-slider"><?php echo esc_html(wp_trim_words($blogs->post_content, 50)); ?></p>
-												<a href="<?php echo esc_url(get_permalink($blogs->ID)); ?>" class="slider-blog">Read Blog &gt;</a>
+												<a href="<?php echo esc_url(get_permalink($blogs->ID)); ?>" class="slider-blog" aria-label="Read Blog: <?php echo esc_attr($blogs->post_title); ?>">Read Blog &gt;</a>
 											</div>
 										</div>
 									<?php
@@ -998,7 +975,6 @@ function custom_blog_and_faq_shortcode() {
 }
 
 add_shortcode('custom_blog_and_faq', 'custom_blog_and_faq_shortcode');
-
 
 
 function flush_rewrite_rules_on_init() {
@@ -1023,6 +999,61 @@ function custom_after_submission($entry, $form) {
     } else {
         error_log('Form submission failed for form ID 18');
     }
+}
+
+// Menu aria-label
+class Custom_Aria_Walker extends Walker_Nav_Menu {
+    // Start each element of the menu
+    function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+        $classes = empty($item->classes) ? array() : (array) $item->classes;
+        $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
+
+        $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+        $output .= '<li id="menu-item-'. $item->ID . '"' . $class_names .'>';
+        
+        // Strip HTML tags for aria-label and get the plain text content of the menu item title
+        $plain_title = strip_tags($item->title);
+        $aria_label = !empty($plain_title) ? ' aria-label="' . esc_attr($plain_title) . '"' : '';
+
+        // Add other attributes like href
+        $attributes  = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
+        $attributes .= !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
+        $attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
+        $attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
+
+        // Build the final output for the menu item
+        $output .= '<a' . $attributes . $aria_label . '>';
+        $output .= apply_filters('the_title', $item->title, $item->ID);
+        $output .= '</a>';
+    }
+}
+
+add_filter('gform_submit_button', 'add_aria_label_to_submit', 10, 2);
+function add_aria_label_to_submit($button, $form) {
+    // Extract the value attribute using a more robust approach
+    if (preg_match('/value=[\'"]([^\'"]+)[\'"]/', $button, $matches)) {
+        $button_value = $matches[1]; // Extract the value inside the value attribute
+    } else {
+        $button_value = 'Submit Form'; // Default value if not found
+    }
+
+    // Add the aria-label attribute with the extracted button value
+    $button = str_replace('<input', '<input aria-label="' . esc_attr($button_value) . '"', $button);
+    
+    return $button;
+}
+
+add_filter('render_block', 'add_aria_label_to_buttons', 10, 2);
+
+function add_aria_label_to_buttons($block_content, $block) {
+    if ($block['blockName'] === 'core/button') {
+        if (preg_match('/<a[^>]*>(.*?)<\/a>/s', $block_content, $matches)) {
+            $button_text = trim(strip_tags($matches[1])); // Remove HTML tags and trim whitespace/new lines
+            $aria_label = 'aria-label="' . esc_attr($button_text) . '"';
+            $block_content = preg_replace('/<a/', '<a ' . $aria_label, $block_content, 1);
+        }
+    }
+    return $block_content;
 }
 
 ?>

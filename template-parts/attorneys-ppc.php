@@ -13,7 +13,7 @@
         if ($publish_count > 0):
         ?>
 
-        <section class="attorneys bg-cream">
+        <section class="attorneys bg-cream" aria-label="Attorneys Section">
             <div class="container">
                 <div class="row justify-content-center reveal-up-all content">
                     <?php if (is_front_page()): ?>
@@ -61,9 +61,9 @@
                     $container_class = ($publish_count <= 3) ? 'attorneys-container--no-slider' : 'attorneys-container';
                     ?>
                     <?php if (is_singular('ppc-site')): ?>
-                        <div id="attorneys-container" class="ppc-site <?php echo $container_class; ?>" data-initial-class="<?php echo $container_class; ?>">
+                        <div id="attorneys-container" class="ppc-site <?php echo $container_class; ?>" data-initial-class="<?php echo $container_class; ?>" aria-label="Attorneys Carousel">
                     <?php else: ?>
-                        <div id="attorneys-container" class="<?php echo $container_class; ?>" data-initial-class="<?php echo $container_class; ?>">
+                        <div id="attorneys-container" class="<?php echo $container_class; ?>" data-initial-class="<?php echo $container_class; ?>" aria-label="Attorneys Carousel">
                     <?php endif; ?>
 
                     <?php foreach ($attorneys as $post):
@@ -73,9 +73,9 @@
 
                         if ($post_status == 'publish'): ?>
                             <?php if (is_singular('ppc-site')): ?>
-                                <a href="<?php the_sub_field('page_link'); ?>" class="single-attorney grid-3 hover-color">
+                                <a href="<?php the_sub_field('page_link'); ?>" class="single-attorney grid-3 hover-color" aria-label="View attorney profile for <?php the_title(); ?>">
                             <?php else: ?>
-                                <a href="<?php the_permalink(); ?>" class="single-attorney grid-3 reveal-up-all hover-color">
+                                <a href="<?php the_permalink(); ?>" class="single-attorney grid-3 reveal-up-all hover-color" aria-label="View attorney profile for <?php the_title(); ?>">
                             <?php endif; ?>
                                 <div class="bg-forest color-panel"></div>
                                 <?php the_post_thumbnail(); ?>
@@ -88,9 +88,9 @@
                     <?php if (is_singular('ppc-site')): ?>
                         <div class="button-container grid-10 copy text-center centered-div reveal-up-all">
                             <?php if (get_locale() == "en_US"): ?>
-                                <a href="https://aa.law/attorneys/" class="btn">Meet our Attorneys</a>
+                                <a href="https://aa.law/attorneys/" class="btn" aria-label="Meet our Attorneys">Meet our Attorneys</a>
                             <?php else: ?>
-                                <a href="https://aa.law/es/abogados/" class="btn">Conozca a nuestros Abogados</a>
+                                <a href="https://aa.law/es/abogados/" class="btn" aria-label="Conozca a nuestros Abogados">Conozca a nuestros Abogados</a>
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>

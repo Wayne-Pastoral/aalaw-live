@@ -23,13 +23,13 @@
 						<?php } ?>
 						
 						<div class="badges">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/badge-bbb-blue.png" alt="BBB Badge">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/badge-google.png" alt="Google Badge">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/badge-bbb-blue.png" alt="BBB Badge" aria-label="BBB Badge">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/badge-google.png" alt="Google Badge" aria-label="Google Badge">
 						</div>
 					</div>
 				</div>
 			</div>
-			<a href="#help" class="caps small">Scroll <img src="<?php echo get_template_directory_uri(); ?>/assets/icon-chevron-down-white.svg"></a>
+			<a href="#help" class="caps small">Scroll <img src="<?php echo get_template_directory_uri(); ?>/assets/icon-chevron-down-white.svg" aria-label="Scroll icon"></a>
 		</section>					
 		<section id="help" class="check-list">
 			<div class="container">
@@ -62,42 +62,42 @@
 					<?php } ?>
 				</div>
 			</div>
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/bg-logomark.svg" alt="Logomark" class="logomark">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/bg-logomark.svg" alt="Logomark" class="logomark" aria-label="Logomark">
 		</section>
 		
 		<section class="nascar reveal-up-all home">
 			<div class="container container--full">
-					<div class="row justify-content-center text-center">
-						<div class="grid-12 copy text-center">
-							<?php if (get_locale() == 'en_US') { ?>
-							<h2 class="text-center">Award-Winning <?php the_field('key_phrase'); ?> Lawyers</h2>
-							<?php } else {  ?>
-							<h2 class="text-center">Abogados condecorados en <?php the_field('key_phrase'); ?></h2>
-							<?php } ?>
-						</div>
+				<div class="row justify-content-center text-center">
+					<div class="grid-12 copy text-center">
+						<?php if (get_locale() == 'en_US') { ?>
+						<h2 class="text-center">Award-Winning <?php the_field('key_phrase'); ?> Lawyers</h2>
+						<?php } else {  ?>
+						<h2 class="text-center">Abogados condecorados en <?php the_field('key_phrase'); ?></h2>
+						<?php } ?>
 					</div>
 				</div>
+			</div>
 
-				<div class="row">
-					<?php
+			<div class="row">
+				<?php
 
-						$logosargs = array(
-							'post_type' => 'awards',
-							'numberposts' => '-1',
-							'order' => 'ASC'
-						);
-						$awards = get_posts($logosargs);
+					$logosargs = array(
+						'post_type' => 'awards',
+						'numberposts' => '-1',
+						'order' => 'ASC'
+					);
+					$awards = get_posts($logosargs);
 
-						if ($awards) :
-							echo '<div class="logos-contain owl-carousel">';
-							foreach ($awards as $award) :
-								  $awardlogo = wp_get_attachment_image_src( get_post_thumbnail_id( $award->ID ), 'full' );
-								  echo '<div class="single-logo '.$award->post_name.'"><picture><img src="'.$awardlogo[0].'" alt="" /></picture></div>';
-							endforeach;
-							echo '</div>';
-						endif;
+					if ($awards) :
+						echo '<div class="logos-contain owl-carousel">';
+						foreach ($awards as $award) :
+							  $awardlogo = wp_get_attachment_image_src( get_post_thumbnail_id( $award->ID ), 'full' );
+							  echo '<div class="single-logo '.$award->post_name.'"><picture><img src="'.$awardlogo[0].'" alt="" aria-label="Award logo" /></picture></div>';
+						endforeach;
+						echo '</div>';
+					endif;
 
-					?>	
+				?>	
 			</div>
 		</section>
 		
@@ -141,31 +141,13 @@
 						<?php } ?>
 					</a>
 					<a href="<?php if (get_locale() == 'en_US') { echo 'https://aa.law/case-results/2-9-million-for-a-tractor-trailer-collision/'; } else { echo 'https://aa.law/es/case-results/2-9-millones-por-colision-de-camion-con-remolque/'; } ?>" class="verdict bg-white">
-						<p class="caps small green"><?php if (get_locale() == 'en_US') { ?>Settlement<?php } else { ?>Acuerdo<?php } ?></p>
-						<p class="h3">$2.9M</p>
-						<?php if (get_locale() == 'en_US') { ?>
-						<p class="headline">Tractor-Trailer T-Bone Accident</p>
-						<?php } else {  ?>
-						<p class="headline">Accidente T-Bone de camión con remolque</p>
-						<?php } ?>
-					</a>
-					<a href="<?php if (get_locale() == 'en_US') { echo 'https://aa.law/case-results/2-8m-settlement-for-a-rear-end-car-accident/'; } else { echo 'https://aa.law/es/case-results/acuerdo-2-8m-por-accidente-automovilistico-trasero/'; } ?>" class="verdict bg-white">
-						<p class="caps small green"><?php if (get_locale() == 'en_US') { ?>Settlement<?php } else { ?>Acuerdo<?php } ?></p>
-						<p class="h3">$2.8M</p>
-						<?php if (get_locale() == 'en_US') { ?>
-						<p class="headline">Rear-end accident causing “chain reaction” collision</p>
-						<?php } else {  ?>
-						<p class="headline">Accidente trasero causante de colisión "reacción en cadena"</p>
-						<?php } ?>
-					</a>
-					<a href="<?php if (get_locale() == 'en_US') { echo 'https://aa.law/case-results/2-7m-negotiated-in-wrongful-death-suit/'; } else { echo 'https://aa.law/es/case-results/2-7m-negociados-en-demanda-por-homicidio-culposo/'; } ?>" class="verdict bg-white">
-						<p class="caps small green"><?php if (get_locale() == 'en_US') { ?>Settlement<?php } else { ?>Acuerdo<?php } ?></p>
-						<p class="h3">$2.7M</p>
-						<?php if (get_locale() == 'en_US') { ?>
-						<p class="headline">Wrongful death from a rear-end truck accident</p>
-						<?php } else {  ?>
-						<p class="headline">Muerte por negligencia de un accidente trasero de camión</p>
-						<?php } ?>
+							<p class="caps small green"><?php if (get_locale() == 'en_US') { ?>Settlement<?php } else { ?>Acuerdo<?php } ?></p>
+							<p class="h3">$2.9M</p>
+							<?php if (get_locale() == 'en_US') { ?>
+							<p class="headline">Tractor-Trailer T-Bone Accident</p>
+							<?php } else {  ?>
+							<p class="headline">Accidente T-Bone de camión con remolque</p>
+							<?php } ?>
 					</a>
 				</div>
 			</div>
@@ -205,14 +187,6 @@
 				</div>
 			</div>
 		</section>
-		<!-- <section class="form-cta">
-			<div class="row align-items-center">
-				<div class="image">
-					<img src="<?php //echo get_template_directory_uri(); ?>/assets/attorney-at-work.jpg" alt="Attorney at work on computer">
-				</div>
-				<?php //get_template_part( 'contact-form', get_post_format() ); ?>
-			</div>
-		</section> -->
 
 		<section class="form-cta__ppc-section" style="background:url(https://aa.law/wp-content/uploads/2021/11/chris-at-desk-scaled.jpg) no-repeat center center / cover">
 			<div class="container">

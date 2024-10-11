@@ -7,7 +7,7 @@
 				<div class="copy text-center">
 					<h3><?php the_sub_field('title', 'option'); ?></h3>
 					<p><?php the_sub_field('copy', 'option'); ?></p>
-					<a href="<?php the_sub_field('page_link'); ?>" class="btn white"><?php the_sub_field('button_name'); ?></a>
+					<a href="<?php the_sub_field('page_link'); ?>" class="btn white" aria-label="<?php the_sub_field('button_name'); ?>"><?php the_sub_field('button_name'); ?></a>
 				</div>
 				<div class="bg-overlay"></div>
 			</div>
@@ -20,7 +20,7 @@
 				<div class="copy text-center">
 					<h3><?php the_sub_field('title', 'option'); ?></h3>
 					<p><?php the_sub_field('copy', 'option'); ?></p>
-					<a href="<?php the_sub_field('page_link'); ?>" class="btn white"><?php the_sub_field('button_name'); ?></a>
+					<a href="<?php the_sub_field('page_link'); ?>" class="btn white" aria-label="<?php the_sub_field('button_name'); ?>"><?php the_sub_field('button_name'); ?></a>
 				</div>
 				<div class="bg-overlay"></div>
 			</div>

@@ -13,7 +13,6 @@
 						if ( is_page( 'about-us' ) ) { ?>
 					     <div class="row">
 							<h1 class="title">What makes us different?</h1>
-<!-- 							<div class="subhead large"></div> -->
 					</div>
 					<?php } else { ?>
 					     <div class="row justify-content-center">
@@ -51,10 +50,10 @@
 							<?php if ( $injury_query->have_posts() ) : ?>
 							 
 							    <?php while ( $injury_query->have_posts() ) : $injury_query->the_post(); ?>
-							        <a href="<?php the_permalink(); ?>" class="attorney grid-16 hover-color">
+							        <a href="<?php the_permalink(); ?>" class="attorney grid-16 hover-color" aria-label="<?php the_title(); ?>">
 								        <div class="bg-forest color-panel"></div>
 								        <?php the_post_thumbnail(); ?>
-								        <h3 class="text-center"><?php the_title(); ?></h4>
+								        <h3 class="text-center"><?php the_title(); ?></h3>
 								    </a>
 							    <?php endwhile; ?>
 							 

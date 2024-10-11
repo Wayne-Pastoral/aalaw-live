@@ -6,11 +6,9 @@
 			<section class="hero" style="background:url('<?php the_post_thumbnail_url(); ?>') no-repeat center center / cover">
 				<div class="bg-overlay dark"></div>
 				<div class="container">
-			
 					     <div class="row justify-content-center">
 							<h1 class="title text-center"><?php the_title(); ?></h1>
 						</div>
-					
 				</div>
 			</section>
 		</div>
@@ -54,7 +52,7 @@ if ($community->have_posts()) :  ?>
 
 <div class="is-layout-flow  text-center" style="padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px">
 	<div class="entry-thumbnail awards-img ">
-<?php the_post_thumbnail('meduim'); ?>
+<?php the_post_thumbnail('meduim', ['aria-label' => 'Award image']); ?>
 		</div>
 <div class="wp-block-group__inner-container">
 <?php the_content(); ?>

@@ -33,7 +33,7 @@
 					</div>
 				</div>
 			</div>
-			<a href="#help" class="caps small">Scroll <img src="<?php echo get_template_directory_uri(); ?>/assets/icon-chevron-down-white.svg"></a>
+			<a href="#help" class="caps small">Scroll <img src="<?php echo get_template_directory_uri(); ?>/assets/icon-chevron-down-white.svg" alt="Chevron Down Icon"></a>
 		</section>					
 		<section id="help" class="check-list">
 			<div class="container">
@@ -96,7 +96,7 @@
 							echo '<div class="logos-contain owl-carousel">';
 							foreach ($awards as $award) :
 								  $awardlogo = wp_get_attachment_image_src( get_post_thumbnail_id( $award->ID ), 'full' );
-								  echo '<div class="single-logo '.$award->post_name.'"><picture><img src="'.$awardlogo[0].'" alt="" /></picture></div>';
+								  echo '<div class="single-logo '.$award->post_name.'"><picture><img src="'.$awardlogo[0].'" alt="'.$award->post_title.'" /></picture></div>';
 							endforeach;
 							echo '</div>';
 						endif;
@@ -179,9 +179,9 @@
 				<div class="row justify-content-center">
 					<?php if (get_locale() == 'en_US') { ?>
 					<h3 class="text-center">Discover how much you can get for your <?php the_field('key_phrase'); ?> case, <br />
-						call <a href="tel:(866) 225-4654">(866) 225-4654</a>.</h3>
+						call <a href="tel:(866) 225-4654" aria-label="Call (866) 225-4654">(866) 225-4654</a>.</h3>
 					<?php } else {  ?>
-					<h3 class="text-center">Descubre cuánto puedes obtener por tu caso de <?php the_field('key_phrase'); ?>, <br />llame al <a href="tel:(866) 225-4654">(866) 225-4654</a>.</h3>
+					<h3 class="text-center">Descubre cuánto puedes obtener por tu caso de <?php the_field('key_phrase'); ?>, <br />llame al <a href="tel:(866) 225-4654" aria-label="Llame al (866) 225-4654">(866) 225-4654</a>.</h3>
 					<?php } ?>
 				</div>
 			</div>
@@ -209,14 +209,6 @@
 				</div>
 			</div>
 		</section>
-		<!-- <section class="form-cta">
-			<div class="row align-items-center">
-				<div class="image">
-					<img src="<?php //echo get_template_directory_uri(); ?>/assets/attorney-at-work.jpg" alt="Attorney at work on computer">
-				</div>
-				<?php //get_template_part( 'contact-form', get_post_format() ); ?>
-			</div>
-		</section> -->
 		
 		<section class="form-cta__ppc-section" style="background:url(https://aa.law/wp-content/uploads/2021/11/chris-at-desk-scaled.jpg) no-repeat center center / cover">
 			<div class="container">
@@ -238,10 +230,10 @@
 				<div class="row justify-content-center">
 					<?php if (get_locale() == 'en_US') { ?>
 					<h3 class="text-center">Do not hesitate to call Adamson Ahdoot LLP if you or a loved one were injured due to the negligence of another person.<br />
-					Request a free consultation today by calling <a href="tel:866-719-4271">866-719-4271.</a></h3>
+					Request a free consultation today by calling <a href="tel:866-719-4271" aria-label="Call 866-719-4271">866-719-4271.</a></h3>
 					<?php } else {  ?>
 					<h3 class="text-center">No dude en llamar a Adamson Ahdoot LLP si usted o un ser querido resultaron heridos debido a la negligencia de otra persona.<br />
-					Solicite una consulta gratuita hoy llamando al <a href="tel:866-719-4271">866-719-4271.</a></h3>
+					Solicite una consulta gratuita hoy llamando al <a href="tel:866-719-4271" aria-label="Llame al 866-719-4271">866-719-4271.</a></h3>
 					<?php } ?>
 				</div>
 			</div>

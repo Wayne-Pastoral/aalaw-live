@@ -17,7 +17,7 @@
                                     $image = get_sub_field('image');
                                     if ($image): 
                                     ?>
-                                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" aria-label="Icon for <?php echo esc_attr($image['alt']); ?>">
                                     <?php endif; ?>
                                 </span>
                                 <strong style="color: #00A771;"><?php the_sub_field('title'); ?></strong>
@@ -50,7 +50,7 @@
                     
                     // Mobile version image display
                     if ($image_logo):
-                        echo '<img src="' . esc_url($image_logo['url']) . '" alt="' . esc_attr($image_logo['alt']) . '" />';
+                        echo '<img src="' . esc_url($image_logo['url']) . '" alt="' . esc_attr($image_logo['alt']) . '" aria-label="Icon for ' . esc_attr($image_logo['alt']) . '" />';
                     endif;
                     
                     echo '</div>';

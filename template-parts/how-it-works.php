@@ -38,21 +38,27 @@
                     <?php endwhile; ?>
                 <?php endif; ?>
             </div>
-        <div class="how-it-works__btn">
-            <a href="<?php 
-                if (get_locale() == 'en_US') {
-                    echo home_url('/our-legal-process');
-                } else {
-                    echo home_url('/es/nuestro-proceso-legal/');
-                } ?>">
-                <?php 
-                if (get_locale() == 'en_US') {
-                    echo 'Our Legal Process';
-                } else {
-                    echo 'Nuestro proceso legal';
-                } ?> 
-            </a>
-        </div>
+            <div class="how-it-works__btn"> 
+                <a href="<?php 
+                    if (get_locale() == 'en_US') {
+                        echo home_url('/our-legal-process');
+                    } else {
+                        echo home_url('/es/nuestro-proceso-legal/');
+                    } ?>" 
+                    aria-label="<?php 
+                    if (get_locale() == 'en_US') {
+                        echo 'Our Legal Process';
+                    } else {
+                        echo 'Nuestro proceso legal';
+                    } ?>">
+                    <?php 
+                    if (get_locale() == 'en_US') {
+                        echo 'Our Legal Process';
+                    } else {
+                        echo 'Nuestro proceso legal';
+                    } ?> 
+                </a>
+            </div>
         </div>
     
         <div class="how-it-works__form-container">

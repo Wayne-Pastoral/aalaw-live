@@ -1,6 +1,6 @@
 <?php if( have_rows('attorneys') ): ?>
     <?php while( have_rows('attorneys') ): the_row(); ?>
-        <section class="attorneys bg-cream">
+        <section class="attorneys bg-cream" aria-label="Attorneys Section">
 			<div class="container container--full">
 				<div class="row justify-content-center reveal-up-all content">
 					<div class="grid-12 copy text-center">
@@ -53,14 +53,14 @@
                     $attorneys = get_sub_field('attorney');
                     if( $attorneys ): ?>
                         <?php if ( is_singular( 'ppc-site' ) ) { ?>
-                            <div class="attorneys-container">
+                            <div class="attorneys-container" aria-label="Attorneys Carousel">
                         <?php } ?>
                         <?php foreach( $attorneys as $post ): 
                             setup_postdata($post); ?>
                             <?php if ( is_singular( 'ppc-site' ) ) { ?>
-                                <a href="<?php the_sub_field('page_link'); ?>" class="single-attorney grid-3 hover-color">
+                                <a href="<?php the_sub_field('page_link'); ?>" class="single-attorney grid-3 hover-color" aria-label="View attorney profile for <?php the_title(); ?>">
                             <?php } else { ?>
-                                <a href="<?php the_permalink(); ?>" class="single-attorney grid-3 reveal-up-all hover-color">
+                                <a href="<?php the_permalink(); ?>" class="single-attorney grid-3 reveal-up-all hover-color" aria-label="View attorney profile for <?php the_title(); ?>">
                             <?php } ?>
                                 <div class="bg-forest color-panel"></div>
                                 <?php the_post_thumbnail(); ?>
@@ -74,9 +74,9 @@
                             </div>
                             <div class="button-container grid-10 copy text-center centered-div reveal-up-all">
                                 <?php if(get_locale() == "en_US"){ ?>
-                                    <a href="https://aa.law/attorneys/" class="btn">Meet our Attorneys</a>
+                                    <a href="https://aa.law/attorneys/" class="btn" aria-label="Meet our Attorneys">Meet our Attorneys</a>
                                 <?php } else { ?>
-                                    <a href="https://aa.law/es/abogados/" class="btn">Conozca a nuestros Abogados</a>
+                                    <a href="https://aa.law/es/abogados/" class="btn" aria-label="Conozca a nuestros Abogados">Conozca a nuestros Abogados</a>
                                 <?php } ?>
                             </div>
                         <?php } ?>

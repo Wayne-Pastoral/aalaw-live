@@ -70,7 +70,7 @@ get_header();
 
 <p>Whether you find yourself in the bustling streets of Los Angeles or the vibrant neighborhoods of Houston, Adamson Ahdoot aims to provide steadfast, comprehensive legal assistance. When you choose to work with us, rest assured that we will prioritize your case, regardless of your location.</p>
 
-<p>Let Adamson Ahdoot be your trusted partner in navigating complex personal injury laws. Call us at <span> 866-977-3353</span> and schedule a free consultation with one of our premier injury attorneys today.  </p>
+<p>Let Adamson Ahdoot be your trusted partner in navigating complex personal injury laws. Call us at <a href="tel:866-977-3353" aria-label="Call Adamson Ahdoot at 866-977-3353">866-977-3353</a> and schedule a free consultation with one of our premier injury attorneys today.  </p>
 				</div>
 			</div>
 		</section>

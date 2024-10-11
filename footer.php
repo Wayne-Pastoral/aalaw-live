@@ -19,6 +19,7 @@
 						array(
 							'theme_location' => 'menu-2',
 							'menu_id'        => 'footer-menu',
+							'walker'         => new Custom_Aria_Walker(),
 						)
 					);
 					?>
@@ -26,7 +27,7 @@
 			
 			<div class="row grid-4 align-items-center footer-socials">
 				<div class="logo-container">
-					<a href="/" class="logo"><img src="<?php the_field('logo', 'option'); ?>" alt="Adamson Ahdoot Logo" /></a>
+					<a href="/" class="logo" aria-label="Adamson Ahdoot Logo"><img src="<?php the_field('logo', 'option'); ?>" alt="Adamson Ahdoot Logo" /></a>
 				</div>
 				<div class="socials grid-16">
 					<?php if(get_locale() == "en_US"){?>
@@ -34,15 +35,15 @@
 					<?php }else{ ?>
 						<h4 class="footer-title">Conéctese con nosotros</h4>
 					<?php } ?>
-		<div class="row grid-16 justify-content-start">
-		   <a href="<?php the_field('yelp_url', 'option'); ?>" target="_blank" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/assets/bi_yelp (1).png"></a>
-		   <a href="<?php the_field('linkedin_url', 'option'); ?>" target="_blank" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/assets/linke_20 (1).png"></a>
-		   <a href="<?php the_field('facebook_url', 'option'); ?>" target="_blank" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/assets/ri_facebook-fill (1).png"></a>
-		   <a href="<?php the_field('instagram', 'option'); ?>" target="_blank" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/assets/insta (1).png"></a>  
-		   <a href="<?php the_field('x_icon', 'option'); ?>" target="_blank" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/assets/pajamas_twitter (1).png"></a>
-		   <a href="<?php the_field('linkin', 'option'); ?>" target="_blank" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/assets/simple-icons_linktree (1).png"></a>
-		   <a href="<?php the_field('youtube', 'option'); ?>" target="_blank" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/assets/ri_youtube-fill (1).png"></a>
-		</div>
+					<div class="row grid-16 justify-content-start">
+						<a href="<?php the_field('yelp_url', 'option'); ?>" target="_blank" rel="nofollow" aria-label="Yelp Profile"><img src="<?php echo get_template_directory_uri(); ?>/assets/bi_yelp (1).png"></a>
+						<a href="<?php the_field('linkedin_url', 'option'); ?>" target="_blank" rel="nofollow" aria-label="LinkedIn Profile"><img src="<?php echo get_template_directory_uri(); ?>/assets/linke_20 (1).png"></a>
+						<a href="<?php the_field('facebook_url', 'option'); ?>" target="_blank" rel="nofollow" aria-label="Facebook Profile"><img src="<?php echo get_template_directory_uri(); ?>/assets/ri_facebook-fill (1).png"></a>
+						<a href="<?php the_field('instagram', 'option'); ?>" target="_blank" rel="nofollow" aria-label="Instagram Profile"><img src="<?php echo get_template_directory_uri(); ?>/assets/insta (1).png"></a>  
+						<a href="<?php the_field('x_icon', 'option'); ?>" target="_blank" rel="nofollow" aria-label="X (Twitter) Profile"><img src="<?php echo get_template_directory_uri(); ?>/assets/pajamas_twitter (1).png"></a>
+						<a href="<?php the_field('linkin', 'option'); ?>" target="_blank" rel="nofollow" aria-label="Linktree Profile"><img src="<?php echo get_template_directory_uri(); ?>/assets/simple-icons_linktree (1).png"></a>
+						<a href="<?php the_field('youtube', 'option'); ?>" target="_blank" rel="nofollow" aria-label="YouTube Channel"><img src="<?php echo get_template_directory_uri(); ?>/assets/ri_youtube-fill (1).png"></a>
+					</div>
 
 				</div>
 				
@@ -99,6 +100,7 @@
 						array(
 							'theme_location' => 'menu-3',
 							'menu_id'        => 'policies-menu',
+							'walker'         => new Custom_Aria_Walker(),
 						)
 					);
 					?>
@@ -107,10 +109,10 @@
 		<div class="mobile-cta bg-green">
 			<?php if (get_locale() == 'en_US') { ?>
 			Hablamos Español
-			<a href="tel:<?php the_field('phone_number','options'); ?>" class="btn white"><img src="<?php echo get_template_directory_uri(); ?>/assets/icon-phone.svg">Call Now</a>
+			<a href="tel:<?php the_field('phone_number','options'); ?>" class="btn white" aria-label="Call Now"><img src="<?php echo get_template_directory_uri(); ?>/assets/icon-phone.svg">Call Now</a>
 			<?php } else { ?>
 			Hablamos Español
-			<a href="tel:<?php the_field('phone_number','options'); ?>" class="btn white"><img src="<?php echo get_template_directory_uri(); ?>/assets/icon-phone.svg">Llama Ahora</a>
+			<a href="tel:<?php the_field('phone_number','options'); ?>" class="btn white" aria-label="Llama Ahora"><img src="<?php echo get_template_directory_uri(); ?>/assets/icon-phone.svg">Llama Ahora</a>
 			<?php } ?>
 		</div>
 	</footer><!-- #colophon -->
@@ -118,8 +120,8 @@
 <!-- js for 3 item logo -->
 <script>
  var $ = jQuery;
- $(".menu-for-english .sub-menu").append("<a href='https://aa.law/practice-areas/' class='view-all-menu'>View All Practice Areas</a>. ");
- $(".spanish-menu .sub-menu").append("<a href='https://aa.law/es/areas-de-practica/' class='view-all-menu'>Ver todas las áreas de práctica</a>. ");
+ $(".menu-for-english .sub-menu").append("<a href='https://aa.law/practice-areas/' class='view-all-menu' aria-label='View All Practice Areas'>View All Practice Areas</a>. ");
+ $(".spanish-menu .sub-menu").append("<a href='https://aa.law/es/areas-de-practica/' class='view-all-menu' aria-label='Ver todas las áreas de práctica'>Ver todas las áreas de práctica</a>. ");
 jQuery(document).ready(function ($) {
     var btn = $('#topbutton');
 

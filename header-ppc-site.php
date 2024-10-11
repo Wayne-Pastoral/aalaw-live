@@ -60,7 +60,7 @@
 					<?php } ?>
 				</div>
 				<div class="phone-call">
-					<a href="tel:<?php the_field('ppc_phone_number', 'option'); ?>" class="large-header orange">
+					<a href="tel:<?php the_field('ppc_phone_number', 'option'); ?>" class="large-header orange" aria-label="Call us at <?php the_field('ppc_phone_number', 'option'); ?>">
 						<img src="https://aa.law/wp-content/uploads/2024/04/call_3848734.webp" >
 						<?php the_field('ppc_phone_number', 'option'); ?>
 					</a>

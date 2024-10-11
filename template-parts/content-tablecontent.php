@@ -2,7 +2,7 @@
     <h2>Table of Contents</h2>
     <ul>
     </ul>
- </nav>
+</nav>
 <script>
 jQuery(document).ready(function() {
     var tableOfContents = jQuery(".table-of-contents");
@@ -13,7 +13,7 @@ jQuery(document).ready(function() {
     h2Elements.each(function(index, element) {
         var handle = generateHandle(jQuery(element).text());
         jQuery(element).attr('id', handle);
-        ulElement.append("<li><a href='#" + handle + "/' onclick='onscrolltoc(\"" + handle + "\")'>" + jQuery(element).text() + "</a></li>");
+        ulElement.append("<li><a href='#" + handle + "/' onclick='onscrolltoc(\"" + handle + "\")' aria-label='" + jQuery(element).text() + "'>" + jQuery(element).text() + "</a></li>");
     });
 });
 

@@ -6,9 +6,9 @@
 			<?php while( have_rows('logos', 'option') ): the_row(); ?>
   		<div class="carousel-cell">
 			<?php if ( get_sub_field( 'link' , 'option' ) ) { ?>
-			<a href="<?php the_sub_field('link'); ?>" target="_blank" class="single-logo"><img src="<?php the_sub_field('logo', 'option'); ?>"></a>
-			<?php } else {?>
-			<a  class="single-logo"><img src="<?php the_sub_field('logo', 'option'); ?>"></a>
+			<a href="<?php the_sub_field('link'); ?>" target="_blank" class="single-logo" aria-label="Visit <?php the_sub_field('link'); ?>"><img src="<?php the_sub_field('logo', 'option'); ?>"></a>
+			<?php } else { ?>
+			<a class="single-logo"><img src="<?php the_sub_field('logo', 'option'); ?>" aria-label="Logo image"></a>
 	  		<?php } ?>
 		</div>
 		<?php endwhile; ?>
@@ -37,7 +37,7 @@
 		<?php if ( $injury_query->have_posts() ) : ?>
 		 
 		    <?php while ( $injury_query->have_posts() ) : $injury_query->the_post(); ?>
-		        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		        <a href="<?php the_permalink(); ?>" aria-label="Read more: <?php the_title(); ?>"><?php the_title(); ?></a>
 		    <?php endwhile; ?>
 		 
 		    <?php wp_reset_postdata(); ?>
@@ -68,7 +68,7 @@
 		<?php if ( $injury_query->have_posts() ) : ?>
 		 
 		    <?php while ( $injury_query->have_posts() ) : $injury_query->the_post(); ?>
-		        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		        <a href="<?php the_permalink(); ?>" aria-label="Read more: <?php the_title(); ?>"><?php the_title(); ?></a>
 		    <?php endwhile; ?>
 		 
 		    <?php wp_reset_postdata(); ?>

@@ -15,12 +15,12 @@ if ( get_post_type() == "case_results" ) {
 		
 		if($image != ""){
 ?>
-			<section class="hero" style="background:url(<?php echo $image ?>) no-repeat center center / cover">
+			<section class="hero" style="background:url(<?php echo $image ?>) no-repeat center center / cover" aria-label="Case Results Hero Image">
 				<div class="bg-overlay dark"></div>
 <?php			
 		} else { 	
 ?>
-			<section class="hero" style="background:url(<?php echo get_template_directory_uri(); ?>/assets/hero-case-results.jpg) no-repeat center center / cover">
+			<section class="hero" style="background:url(<?php echo get_template_directory_uri(); ?>/assets/hero-case-results.jpg) no-repeat center center / cover" aria-label="Default Hero Image">
 				<div class="bg-overlay dark"></div>
 
 <?php
@@ -28,7 +28,7 @@ if ( get_post_type() == "case_results" ) {
 		
 	} else {			
 ?>
-		<section class="hero" style="background:url(<?php echo get_template_directory_uri(); ?>/assets/hero-case-results.jpg) no-repeat center center / cover">
+		<section class="hero" style="background:url(<?php echo get_template_directory_uri(); ?>/assets/hero-case-results.jpg) no-repeat center center / cover" aria-label="Default Hero Image">
 			<div class="bg-overlay dark"></div>
 
 <?php 
@@ -39,11 +39,11 @@ if ( get_post_type() == "case_results" ) {
 	if ( has_post_thumbnail() ) {
 		global $post;
 ?>
-		<section class="hero" style="background:url(<?php echo get_the_post_thumbnail_url($post->id, 'full') ?>) no-repeat center center / cover">
+		<section class="hero" style="background:url(<?php echo get_the_post_thumbnail_url($post->id, 'full') ?>) no-repeat center center / cover" aria-label="Post Thumbnail Hero Image">
 <?php 
 	} else {
 ?>
-		<section class="hero" style="background:url(<?php echo get_template_directory_uri(); ?>/assets/hero-case-results.jpg) no-repeat center center / cover">
+		<section class="hero" style="background:url(<?php echo get_template_directory_uri(); ?>/assets/hero-case-results.jpg) no-repeat center center / cover" aria-label="Default Hero Image">
 <?php 
 	}
 }

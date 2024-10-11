@@ -50,7 +50,7 @@ foreach ($terms as $term) {
             // Your custom post type content goes here
             ?>
             <div class="card-location">
-                <a href="<?php the_permalink() ?>">
+                <a href="<?php the_permalink() ?>" aria-label="Link to location details for <?php echo esc_html($title); ?>">
                     <div class="card-content">
                         <h3 class="location-title-item"><?= $title; ?></h3>
                         <div style="margin-bottom:1rem;">
@@ -59,7 +59,7 @@ foreach ($terms as $term) {
                         </div>
                     </div>
                     <?php if($map_data) {?>
-                        <iframe width="609" height="300" frameborder="0" style="border:0" src="<?php echo esc_url($map_data); ?>" allowfullscreen></iframe>
+                        <iframe width="609" height="300" frameborder="0" style="border:0" src="<?php echo esc_url($map_data); ?>" allowfullscreen aria-label="Map of <?php echo esc_html($title); ?>"></iframe>
                     <?php } ?>
                 </a>
             </div>

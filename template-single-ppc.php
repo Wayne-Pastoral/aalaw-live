@@ -53,11 +53,10 @@
 							<?php get_template_part( 'contact-form', get_post_format() ); ?>	
 							<div class="text-center graphic">
 								<div class="graphic-form-line"></div>
-								<img style="width:30%" src="<?php echo get_template_directory_uri(); ?>/assets/avvo-rating-new.png">
-								<img style="width:30%" src="<?php echo get_template_directory_uri(); ?>/assets/google-new.png">
-								<img style="width:30%" src="<?php echo get_template_directory_uri(); ?>/assets/excellent.png">
+								<img style="width:30%" src="<?php echo get_template_directory_uri(); ?>/assets/avvo-rating-new.png" alt="Avvo Rating">
+								<img style="width:30%" src="<?php echo get_template_directory_uri(); ?>/assets/google-new.png" alt="Google Rating">
+								<img style="width:30%" src="<?php echo get_template_directory_uri(); ?>/assets/excellent.png" alt="Excellent Rating">
 							</div>
-<!-- 							<div class="arrow-down"></div> -->
 						<?php endwhile; endif; ?>
 						<?php endwhile; endif; ?>
 					</div>
@@ -152,7 +151,7 @@
 			<li class="wp-block-post post-8854 accidents type-accidents status-publish has-post-thumbnail hentry">
 						<div class="is-layout-flow  text-center" >
 											<div class="entry-thumbnail">
-												<img src="<?php the_sub_field('img'); ?>">
+												<img src="<?php the_sub_field('img'); ?>" alt="<?php the_sub_field('company_name'); ?>">
 											</div>
 										</div>
 									</li>
@@ -226,10 +225,6 @@
 				<?php }else{ ?>
 				<div data-bid="94149" data-url="https://app.gatherup.com"><script src="https://widget.reviewability.com/js/widgetAdv.min.js" async=""></script></div><script class="json-ld-content" type="application/ld+json"></script>
 <?php } ?>
-<!-- 				<div class="row justify-content-center bg-green">
-					<p class="medium text-center"><?php the_sub_field('top_headline'); ?></p>
-					<h2><?php the_sub_field('bottom_headline', false); ?></h2>
-				</div> -->
 			</div>
 		</section>
 		<?php endwhile; endif; ?>

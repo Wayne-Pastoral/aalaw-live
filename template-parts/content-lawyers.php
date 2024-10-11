@@ -27,8 +27,8 @@ if ($lawyer->have_posts()) :  ?>
     <li class="wp-block-post post-8854 accidents type-accidents status-publish has-post-thumbnail hentry">
         <div class="is-layout-flow wp-block-group bg-white" style="padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px">
             <div class="entry-thumbnails">
-                <a href="<?php echo esc_url($link_url); ?>">
-                    <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr($alt_text); ?>">
+                <a href="<?php echo esc_url($link_url); ?>" aria-label="Link to attorney profile for <?php the_title(); ?>">
+                    <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr($alt_text); ?>" aria-label="Thumbnail of <?php echo esc_attr($alt_text); ?>">
                 </a>
             </div>
             <div class="awards-content">
@@ -52,8 +52,8 @@ if ($lawyer->have_posts()) :  ?>
         <li class="wp-block-post post-8854 accidents type-accidents status-publish has-post-thumbnail hentry">
             <div class="is-layout-flow wp-block-group bg-white" style="padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px">
                 <div class="entry-thumbnails">
-                    <a href="<?php echo esc_url($link_url); ?>">
-                        <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr($alt_text); ?>">
+                    <a href="<?php echo esc_url($link_url); ?>" aria-label="Link to attorney profile for <?php the_title(); ?>">
+                        <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr($alt_text); ?>" aria-label="Thumbnail of <?php echo esc_attr($alt_text); ?>">
                     </a>
                 </div>
                 <div class="awards-content">

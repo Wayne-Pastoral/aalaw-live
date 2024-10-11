@@ -149,11 +149,10 @@
 					</div>
 					
 					<?php if(get_locale() == "en_US"){ ?>
- 						<a href="https://aa.law/practice-areas/"  class="btn list-panel--btn">View All Practice Areas</a> 
-						<?php }else{ ?>
-						<a href="https://aa.law/es/areas-de-practica/"  class="btn list-panel--btn">Ver todas las áreas de práctica</a> 
+						<a href="https://aa.law/practice-areas/" class="btn list-panel--btn" aria-label="View All Practice Areas">View All Practice Areas</a> 
+					<?php } else { ?>
+						<a href="https://aa.law/es/areas-de-practica/" class="btn list-panel--btn" aria-label="Ver todas las áreas de práctica">Ver todas las áreas de práctica</a> 
 					<?php } ?>
-					
 				</div>
 <!-- 				<div class="row justify-content-center reveal-up-all">
 					<a href="<?php// the_sub_field('button_link'); ?>" class="btn"><?php //the_sub_field('button_name'); ?></a>
@@ -234,9 +233,9 @@
 									
 									<div class="home-faq-button home-blog-button">
 										<?php if(get_locale() == "en_US"){ ?>
-											<a href="https://aa.law/faqs/" class="btn">View All FAQs</a>
+											<a href="https://aa.law/faqs/" class="btn" aria-label="View All FAQs">View All FAQs</a>
 										<?php } else { ?>
-											<a href="https://aa.law/es/preguntas-frecuentes/" class="btn">Ver todas las preguntas frecuentes</a>
+											<a href="https://aa.law/es/preguntas-frecuentes/" class="btn" aria-label="Ver todas las preguntas frecuentes">Ver todas las preguntas frecuentes</a>
 										<?php } ?>
 									</div>
 								</div>

@@ -1,6 +1,6 @@
 <div class="caseresults-child">
 <?php 
-	
+
 if ( have_posts() ) :
 	while ( have_posts() ) : 
 		the_post();
@@ -18,103 +18,6 @@ if ( have_posts() ) :
 		<section class="top-content container">
 			<div class="wrap"><?php echo get_the_content() ?></div>
 		</section>
-		
-		<!--<div class="container">
-			<form class="search-form" role="search" action="<?php echo get_site_url(); ?>" method="get">
-				<h2><?php echo get_locale() == 'en_US' ? 'Search for a Traffic related article' : 'Busca Un Artículo Relacionado Con Tráfico' ?></h2>
-				<div>
-					<input placeholder="<?php echo get_locale() == 'en_US' ? 'Search article' : 'Buscar artículo' ?>" type="text" name="s" title="Search" value="" />
-					<input type="hidden" name="cat" value="<?php echo $post->post_name ?>">
-					<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M14.8311 14.0156L11.2242 10.4095C12.2696 9.15436 12.7909 7.54453 12.6797 5.91486C12.5684 4.2852 11.8331 2.76116 10.6268 1.65979C9.42052 0.558426 7.83603 -0.0354732 6.20299 0.0016403C4.56995 0.0387538 3.01409 0.704023 1.85906 1.85906C0.704023 3.01409 0.0387538 4.56995 0.0016403 6.20299C-0.0354732 7.83603 0.558426 9.42052 1.65979 10.6268C2.76116 11.8331 4.2852 12.5684 5.91486 12.6797C7.54453 12.7909 9.15436 12.2696 10.4095 11.2242L14.0156 14.8311C14.0692 14.8847 14.1328 14.9271 14.2027 14.9561C14.2727 14.9851 14.3477 15 14.4234 15C14.4991 15 14.5741 14.9851 14.644 14.9561C14.714 14.9271 14.7776 14.8847 14.8311 14.8311C14.8847 14.7776 14.9271 14.714 14.9561 14.644C14.9851 14.5741 15 14.4991 15 14.4234C15 14.3477 14.9851 14.2727 14.9561 14.2027C14.9271 14.1328 14.8847 14.0692 14.8311 14.0156ZM1.16852 6.3552C1.16852 5.32937 1.47271 4.32658 2.04263 3.47364C2.61255 2.62069 3.4226 1.9559 4.37035 1.56333C5.31809 1.17076 6.36096 1.06805 7.36708 1.26818C8.37319 1.46831 9.29737 1.96229 10.0227 2.68766C10.7481 3.41303 11.2421 4.33721 11.4422 5.34333C11.6424 6.34945 11.5396 7.39232 11.1471 8.34006C10.7545 9.2878 10.0897 10.0979 9.23677 10.6678C8.38383 11.2377 7.38103 11.5419 6.3552 11.5419C4.98008 11.5404 3.66171 10.9934 2.68935 10.0211C1.71699 9.0487 1.17004 7.73033 1.16852 6.3552Z" fill="#384541"/>
-					</svg>
-				</div>
-			</form>	
-		</div>-->
-<?php 
-	
-	$mylang = pll_current_language(); 
-	$is_spanish = "";
-	
-	if($mylang=='es'){
-		$is_spanish = "es/";
-	}
-					
-	$blogurl = "/".$is_spanish."blog-api";			   
-	$caseurl = "/".$is_spanish."case-api";							   
-	
-?>
-<script>
-
-jQuery( document ).ready(function() {
-	//case result
-	jQuery.get( "<?php echo $caseurl; ?>?post_name=<?php echo $post->post_name; ?>", function( data ) {
-	 	jQuery(".case-results-for .container").html(data);
-		jQuery( ".case-results-for a.page-numbers" ).each(function() {
-		  jQuery(this).attr('onclick','casetrigger(this)');
-		  jQuery(this).attr('data-url',jQuery(this).attr('href'));
-		  jQuery(this).attr('href','javascript:void(0)');
-		});		
-		
-	});
-	
-	
-	jQuery.get( "<?php echo $blogurl; ?>?post_name=<?php echo $post->post_name; ?>", function( data ) {
-		console.log(data);
-	 	jQuery(".bloglist-wrapper .container").html(data);
-		jQuery( ".bloglist-wrapper a.page-numbers" ).each(function() {
-		  jQuery(this).attr('onclick','caseblog(this)');
-		  jQuery(this).attr('data-url',jQuery(this).attr('href'));
-		  jQuery(this).attr('href','javascript:void(0)');
-		});		
-		
-	});	
-	
-	
-});
-	
-	function caseblog(data){
-		var url = jQuery(data).attr('data-url');
-	jQuery.get(url, function( data ) {
-	 	jQuery(".bloglist-wrapper .container").html(data);
-		jQuery( ".bloglist-wrapper a.page-numbers" ).each(function() {
-		  jQuery(this).attr('onclick','caseblog(this)');
-		  jQuery(this).attr('data-url',jQuery(this).attr('href'));
-		  jQuery(this).attr('href','javascript:void(0)');
-		});			
-		
-	});				
-		
-	}
-	
-	function casetrigger(data){
-		var url = jQuery(data).attr('data-url');
-		
-	jQuery.get(url, function( data ) {
-	 	jQuery(".case-results-for .container").html(data);
-		jQuery( ".case-results-for a.page-numbers" ).each(function() {
-		  jQuery(this).attr('onclick','casetrigger(this)');
-		  jQuery(this).attr('data-url',jQuery(this).attr('href'));
-		  jQuery(this).attr('href','javascript:void(0)');
-		});		
-		
-	});		
-		
-	}
-</script>
-		<!-- <section class="case-results-for">
-			<h2> -->
-				<?php
-					//if ( get_locale() == 'en_US' ) {
-						//echo get_the_title() . ' Case Results';
-					//} else {
-						//echo 'Resultados de Casos de ' . get_the_title();
-					//}
-				?>
-			<!-- </h2>
-			<p>Lectus aenean proin aceta ultrices</p>
-			<div class="container"></div>
-		</section> -->
 
 		<section class="custom-case-result">
 			<h2>
@@ -147,7 +50,7 @@ jQuery( document ).ready(function() {
 							$title = get_the_title();
 							$case_amount = get_post_meta(get_the_ID(), 'case_amount', true);
 							$permalink = get_permalink();
-							echo '<li style="display:none;"><a href="' . esc_url($permalink) . '"><span>' . esc_html($title) . '</span></a></li>';
+							echo '<li style="display:none;"><a href="' . esc_url($permalink) . '" aria-label="Read more about ' . esc_html($title) . '"><span>' . esc_html($title) . '</span></a></li>';
 						endwhile;
 						echo '</ul>';
 					else :
@@ -335,7 +238,7 @@ jQuery( document ).ready(function() {
 						$faqcontent = wp_strip_all_tags( get_the_content() );
 						$active = $counter == 1 ? 'active' : '';
 						echo '<div class="item '. $active .'"><h3><span>'.get_the_title().'</span><svg width="17" height="10" viewBox="0 0 17 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.1768 0.814949L15.3537 0.00427198L11.9252 3.37805L8.4967 6.75165L5.06613 3.37583L1.63539 -6.71608e-07L0.817696 0.817853L-7.14916e-08 1.63554L4.24879 5.81777L8.49757 10L12.7488 5.81281L17 1.62563L16.1768 0.814949Z" fill="#00A771"/></svg></h3>';
-						echo '<div><p>'.substr($faqcontent, 0, 320).'...</p> <a href="'.get_the_permalink().'">'. (get_locale() == 'en_US' ? 'Continue Reading' : 'Continue Leyendo') .'</a></div></div>';
+						echo '<div><p>'.substr($faqcontent, 0, 320).'...</p> <a href="'.get_the_permalink().'" aria-label="Continue reading '.get_the_title().'">'. (get_locale() == 'en_US' ? 'Continue Reading' : 'Continue Leyendo') .'</a></div></div>';
 					endwhile;
 					echo '</div>';
 				endif;
@@ -382,7 +285,7 @@ jQuery( document ).ready(function() {
 		<section class="banner-cta bg-lt-green">
 			<div class="container">
 				<div class="row justify-content-center align-items-center">
-					<p><?php echo get_locale() == 'en_US' ? 'Get a free consultation:' : 'Obtenga una consulta gratuita:' ?> <a href="tel:(866) 591-4947">(866) 591-4947</a><span><?php echo get_locale() == 'en_US' ? 'Hablamos Español' : 'We Speak English' ?></span></p>
+					<p><?php echo get_locale() == 'en_US' ? 'Get a free consultation:' : 'Obtenga una consulta gratuita:' ?> <a href="tel:(866) 591-4947" aria-label="Call (866) 591-4947">(866) 591-4947</a><span><?php echo get_locale() == 'en_US' ? 'Hablamos Español' : 'We Speak English' ?></span></p>
 				</div>
 			</div>
 		</section>
@@ -396,9 +299,8 @@ jQuery( document ).ready(function() {
 		<section class="contact">
 			<div class="container">
 				<div class="wrap">
-					<!-- <h4>Contact Us</h4> -->
 					<h2><?php echo get_locale() == 'en_US' ? 'Contact Us' : 'Contáctenos' ?></h2>
-					<p><?php echo get_locale() == 'en_US' ? 'Talk to an experienced law firm equipped to handle traffic cases cases throughout Los Angeles and California.' : 'Hable con un bufete de abogados experimentado y equipado para manejar casos de tráfico en Los Ángeles y California.' ?></p>
+					<p><?php echo get_locale() == 'en_US' ? 'Talk to an experienced law firm equipped to handle traffic cases throughout Los Angeles and California.' : 'Hable con un bufete de abogados experimentado y equipado para manejar casos de tráfico en Los Ángeles y California.' ?></p>
 					<?php get_template_part( 'contact-form', get_post_format() ); ?>
 				</div>
 			</div>
@@ -435,7 +337,7 @@ if ( $sibquery->have_posts() ) :
 	while ( $sibquery->have_posts() ) :
 		$sibquery->the_post();
 		$sibbfeatimage = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
-		echo '<div class="item"><a href="'.get_the_permalink().'"><span style="background-image:url('.$sibbfeatimage[0].')"></span><strong>'.get_the_title().'</strong></a></div>';
+		echo '<div class="item"><a href="'.get_the_permalink().'" aria-label="Read more about '.get_the_title().'"><span style="background-image:url('.$sibbfeatimage[0].')"></span><strong>'.get_the_title().'</strong></a></div>';
 	endwhile;
 	echo '</div></div></section>';
 endif;

@@ -31,13 +31,13 @@ if ($query->have_posts()) {
         if ($counter === 1) {
             echo '<div class="location-based-blog__main-container">';
             echo '<div class="location-based-blog__main">';
-            echo '<div class="location-based-blog__headings"><h2 class="location-based-blog__heading">Recent ' . $post_slug_with_spaces . ' Blogs</h2></div>';
+            echo '<div class="location-based-blog__headings"><h2 class="location-based-blog__heading">Recent ' . esc_html($post_slug_with_spaces) . ' Blogs</h2></div>';
             if ($post_thumbnail) {
-                echo '<div class="location-based-blog__image"><a href="' . get_the_permalink() . '">' . $post_thumbnail . '</a></div>';
+                echo '<div class="location-based-blog__image"><a href="' . esc_url(get_the_permalink()) . '">' . $post_thumbnail . '</a></div>';
             }
             echo '<div class="location-based-blog__main-headings">';
-            echo '<div class="location-based-blog__title"><a href="' . get_the_permalink() . '">' . $post_title . '</a></div>';
-            echo '<div class="location-based-blog__date">' . $post_date . '</div>';
+            echo '<div class="location-based-blog__title"><a href="' . esc_url(get_the_permalink()) . '" aria-label="' . esc_attr($post_title) . '">' . esc_html($post_title) . '</a></div>';
+            echo '<div class="location-based-blog__date">' . esc_html($post_date) . '</div>';
             echo '</div>';
             echo '</div>'; // Close main container
         } elseif ($counter > 1 && $counter <= 6) {
@@ -47,11 +47,11 @@ if ($query->have_posts()) {
                 $other_stories_heading_displayed = true;
             }
             echo '<div class="location-based-blog__others">';
-            echo '<div class="location-based-blog__title"><a href="' . get_the_permalink() . '">' . $post_title . '</a></div>';
+            echo '<div class="location-based-blog__title"><a href="' . esc_url(get_the_permalink()) . '" aria-label="' . esc_attr($post_title) . '">' . esc_html($post_title) . '</a></div>';
             if ($post_author) {
-                echo '<div class="location-based-blog__date">' . $post_date . ' | ' . $post_author . '</div>';
+                echo '<div class="location-based-blog__date">' . esc_html($post_date) . ' | ' . esc_html($post_author) . '</div>';
             } else {
-                echo '<div class="location-based-blog__date">' . $post_date . '</div>';
+                echo '<div class="location-based-blog__date">' . esc_html($post_date) . '</div>';
             }
             echo '</div>'; // Close others container
         }
@@ -83,13 +83,13 @@ if ($query->have_posts()) {
 
             echo '<div class="location-based-blog__main-container">';
             echo '<div class="location-based-blog__main">';
-            echo '<div class="location-based-blog__headings"><h2 class="location-based-blog__heading">Recent ' . $post_slug_with_spaces . ' Blogs</h2></div>';
+            echo '<div class="location-based-blog__headings"><h2 class="location-based-blog__heading">Recent ' . esc_html($post_slug_with_spaces) . ' Blogs</h2></div>';
             if ($post_thumbnail) {
-                echo '<div class="location-based-blog__image"><a href="' . get_the_permalink() . '">' . $post_thumbnail . '</a></div>';
+                echo '<div class="location-based-blog__image"><a href="' . esc_url(get_the_permalink()) . '">' . $post_thumbnail . '</a></div>';
             }
             echo '<div class="location-based-blog__main-headings">';
-            echo '<div class="location-based-blog__title"><a href="' . get_the_permalink() . '">' . $post_title . '</a></div>';
-            echo '<div class="location-based-blog__date">' . $post_date . '</div>';
+            echo '<div class="location-based-blog__title"><a href="' . esc_url(get_the_permalink()) . '" aria-label="' . esc_attr($post_title) . '">' . esc_html($post_title) . '</a></div>';
+            echo '<div class="location-based-blog__date">' . esc_html($post_date) . '</div>';
             echo '</div>';
             echo '</div>'; // Close main container
         }

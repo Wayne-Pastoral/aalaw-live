@@ -53,7 +53,7 @@
 							</div>
 							<?php get_template_part( 'contact-form', get_post_format() ); ?>	
 							<div class="text-center graphic">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/avvo-superb.png">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/avvo-superb.png" alt="Avvo Superb Rating">
 							</div>
 <!-- 							<div class="arrow-down"></div> -->
 						<?php endwhile; endif; ?>

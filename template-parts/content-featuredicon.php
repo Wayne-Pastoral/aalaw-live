@@ -12,7 +12,7 @@
 								$image = get_sub_field('img');
 								if ($image) : 
 								?>
-									<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+									<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" aria-label="Featured company logo: <?php echo esc_attr($image['alt']); ?>">
 								<?php endif; ?>
 							</div>
 						</div>

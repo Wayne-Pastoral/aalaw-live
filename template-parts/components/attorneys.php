@@ -20,15 +20,15 @@
 
                     if ($post_status == 'draft') {
                         if ($locale == 'es_MX') { ?>
-                            <a href="https://aa.law/es/abogados/" class="single-attorney grid-3 hover-color">
+                            <a href="https://aa.law/es/abogados/" class="single-attorney grid-3 hover-color" aria-label="View attorneys page in Spanish">
                         <?php } elseif ($locale == 'en_US') { ?>
-                            <a href="https://aa.law/attorneys/" class="single-attorney grid-3 hover-color">
+                            <a href="https://aa.law/attorneys/" class="single-attorney grid-3 hover-color" aria-label="View attorneys page in English">
                         <?php }
                     } else {
                         if (is_singular('ppc-site')) { ?>
-                            <a href="<?php echo esc_url(get_sub_field('page_link')); ?>" class="single-attorney grid-3 hover-color">
+                            <a href="<?php echo esc_url(get_sub_field('page_link')); ?>" class="single-attorney grid-3 hover-color" aria-label="View attorney details">
                         <?php } else { ?>
-                            <a href="<?php echo esc_url(get_permalink()); ?>" class="single-attorney grid-3 hover-color">
+                            <a href="<?php echo esc_url(get_permalink()); ?>" class="single-attorney grid-3 hover-color" aria-label="View attorney details for <?php the_title(); ?>">
                         <?php }
                     } ?>
                         <div class="bg-forest color-panel"></div>
@@ -38,7 +38,7 @@
                 <?php endforeach;
                 wp_reset_postdata(); ?>
                 <?php if (get_sub_field('button_name')) { ?>
-                    <a href="<?php echo esc_url(get_sub_field('page_link')); ?>" class="btn"><?php the_sub_field('button_name'); ?></a>
+                    <a href="<?php echo esc_url(get_sub_field('page_link')); ?>" class="btn" aria-label="View more attorneys"><?php the_sub_field('button_name'); ?></a>
                 <?php } ?>
             <?php endif; ?>
         </div>
