@@ -6,11 +6,161 @@
         <div class="form-contianer__logo">
             <img src="https://aa.law/wp-content/uploads/2024/10/image-1.png" alt="Site Logo">
         </div>
-        <?php  gravity_form( 18, false, false, false, '', true ); ?>
+        <div class="form-contianer__main">
+            <button class="close-form-btn" aria-label="Close form"><img src="https://aa.law/wp-content/uploads/2024/10/x.png" alt="Cross Icon"></button>
+            <?php  gravity_form( 18, false, false, false, '', true ); ?>
+        </div>
+    </div>
+
+    <div id="confirmationModal" class="form-container__confirmation-modal">
+        <div class="form-container__confirmation-modal-content">
+            <div class="form-contianer__logo">
+                <img src="https://aa.law/wp-content/uploads/2024/10/image-1.png" alt="Site Logo">
+            </div>
+            <h3>Are you sure you don't need help?</h3>
+            <div class="form-contianer__buttons">
+                <button id="confirmYes" class="form-contianer__button">Yes</button>
+                <button id="confirmNo" class="form-contianer__button">No</button>
+            </div>
+        </div>
     </div>
 </main>
 
+<script>
+    jQuery(document).ready(function($) {
+        $('.close-form-btn').on('click', function() {
+            $('#confirmationModal').css('display', 'flex');
+        });
+
+        $('#confirmYes').on('click', function() {
+            window.location.href = '/';
+        });
+
+        $('#confirmNo').on('click', function() {
+            $('#confirmationModal').hide();
+        });
+    });
+</script>
 <style>
+    .form-contianer__buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 1.5rem;
+    }
+
+    .form-contianer__button {
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .close-form-btn:hover {
+        background: none;
+        color: #000;
+        opacity: 0.8;
+    }
+
+    .form-contianer .gf_progressbar {
+        max-width: 93%;
+    }
+
+    .custom-form__label {
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .form-container__confirmation-modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #F7F6F2;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-container__confirmation-modal-content {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 5px;
+        text-align: center;
+        min-width: 700px;
+    }
+
+    #input_18_33 label {
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .page-template-page-facebook .gform_wrapper.gravity-theme .gfield_required {
+        color: #000;
+        padding: 0;
+    }
+
+    .page-template-page-facebook .gf_progressbar_percentage.percentbar_blue.percentbar_100 {
+        width: 98% !important;
+    }
+
+    .close-form-btn {
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        font-size: 24px;
+        font-weight: 400;
+        cursor: pointer;
+        position: absolute;
+        top: -4px;
+        right: 0;
+        color: #000;
+        margin-top: -5px;
+    }
+
+    .form-contianer__main {
+        position: relative;
+    }
+
+    .custom-confirmation-message {
+        display: flex;
+    }
+
+    .custom-confirmation-message__column {
+        width: 50%;
+    }
+
+    .custom-confirmation-message__message p {
+        margin: 0;
+    }
+
+    .custom-confirmation-message__alert {
+        background: #DCEDE7;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+
+    #close-button {
+        width: 100%;
+    }
+
+    .custom-confirmation-message__alert span {
+        font-size: 14px;
+        color: #00A771;
+    }
+
+    .custom-confirmation-message__column--right {
+        display: flex;
+        align-items: center;
+        padding: 40px 20px;
+    }
+
     .page-template-page-facebook #masthead,
     .page-template-page-facebook .site-footer,
     .page-template-page-facebook .gform_next_button,
@@ -18,6 +168,19 @@
         position: absolute;
         top: -100%;
         visibility: hidden;
+    }
+
+    .page-template-page-facebook #gform_page_18_4 fieldset {
+        max-width: 100% !important;
+    }
+
+    .page-template-page-facebook .gform_wrapper.gravity-theme #gform_page_18_4  .gfield {
+        min-width: unset;
+    }
+
+    #gform_submit_button_18 {
+        width: 100%;
+        cursor: pointer;
     }
 
     .page-template-page-facebook .gform_heading,
@@ -37,13 +200,12 @@
     .page-template-page-facebook .gform_wrapper.gravity-theme .gf_progressbar_percentage span {
         display: none;
     }
-    .page-template-page-facebook h3 {
+
+    .page-template-page-facebook h4 {
         text-align: center;
         margin-top: 1rem;
         margin-bottom: 0.5rem;
     }
-
-    
 
     .page-template-page-facebook .site-main {
         padding-top: 5rem;

@@ -1056,4 +1056,25 @@ function add_aria_label_to_buttons($block_content, $block) {
     return $block_content;
 }
 
+add_filter( 'gform_confirmation_18', 'custom_confirmation_message', 10, 4 );
+function custom_confirmation_message( $confirmation, $form, $entry, $is_ajax ) {
+    $confirmation = '
+    <div class="custom-confirmation-message">
+		<div class="custom-confirmation-message__column">
+			<img src="https://aa.law/wp-content/uploads/2024/10/Frame-383.png" alt="Thank You Image" />
+		</div>
+		<div class="custom-confirmation-message__column custom-confirmation-message__column--right">
+			<div class="custom-confirmation-message__message">
+				<p>Thank you. Please call <strong><a data-calltrk-noswap="" href="tel:18003101606">(800) 310-1606</a></strong> if you find yourself in need of legal representation.</p>
+				<div class="custom-confirmation-message__alert">
+					<img src="https://aa.law/wp-content/uploads/2024/10/clock.png" alt="">
+					<span>You will be redirected in 5 seconds</span>
+				</div>
+				<button id="close-button" class="custom-confirmation-message__close">close</button>
+			</div>
+		</div>
+    </div>';
+
+    return $confirmation;
+}
 ?>
