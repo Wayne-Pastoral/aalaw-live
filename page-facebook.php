@@ -4,18 +4,22 @@
 <main id="primary" class="site-main">
     <div class="form-contianer">
         <div class="form-contianer__logo">
-            <img src="https://aa.law/wp-content/uploads/2024/10/image-1.png" alt="Site Logo">
+            <a href="<?php echo home_url(); ?>">
+                <img src="https://aa.law/wp-content/uploads/2024/10/image-1.png" alt="Site Logo">
+            </a>
         </div>
         <div class="form-contianer__main">
             <button class="close-form-btn" aria-label="Close form"><img src="https://aa.law/wp-content/uploads/2024/10/x.png" alt="Cross Icon"></button>
-            <?php  gravity_form( 18, false, false, false, '', true ); ?>
+            <?php gravity_form(18, false, false, false, '', true); ?>
         </div>
     </div>
 
     <div id="confirmationModal" class="form-container__confirmation-modal">
         <div class="form-container__confirmation-modal-content">
             <div class="form-contianer__logo">
-                <img src="https://aa.law/wp-content/uploads/2024/10/image-1.png" alt="Site Logo">
+                <a href="<?php echo home_url(); ?>">
+                    <img src="https://aa.law/wp-content/uploads/2024/10/image-1.png" alt="Site Logo">
+                </a>
             </div>
             <h3>Are you sure you don't need help?</h3>
             <div class="form-contianer__buttons">
@@ -26,27 +30,36 @@
     </div>
 </main>
 
-<script>
-    jQuery(document).ready(function($) {
-        $('.close-form-btn').on('click', function() {
-            $('#confirmationModal').css('display', 'flex');
-        });
-
-        $('#confirmYes').on('click', function() {
-            window.location.href = '/';
-        });
-
-        $('#confirmNo').on('click', function() {
-            $('#confirmationModal').hide();
-        });
-    });
-</script>
 <style>
+    #facebook-page {
+        overflow-y: hidden;
+    }
+
+
+    .page-template-page-facebook .form-contianer.form-contianer--submitted {
+        padding: 0;
+    }
+
+    .custom-confirmation-message__logo {
+        margin-bottom: 1rem;
+    }
+
     .form-contianer__buttons {
         display: flex;
         justify-content: space-between;
         gap: 20px;
         margin-top: 1.5rem;
+    }
+
+    .custom-confirmation-message__main-image {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .custom-confirmation-message__phone-number {
+        color: #00A771;
+        text-decoration: none;
+        font-weight: 600;
     }
 
     .form-contianer__button {
@@ -80,6 +93,11 @@
         background-color: #F7F6F2;
         justify-content: center;
         align-items: center;
+    }
+
+    .form-contianer--submitted .form-contianer__logo,
+    .form-contianer--submitted .close-form-btn {
+        display: none;
     }
 
     .form-container__confirmation-modal-content {
@@ -142,12 +160,13 @@
         justify-content: center;
         padding-top: 5px;
         padding-bottom: 5px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         margin-top: 20px;
     }
 
     #close-button {
         width: 100%;
+        cursor: pointer;
     }
 
     .custom-confirmation-message__alert span {
@@ -181,6 +200,7 @@
     #gform_submit_button_18 {
         width: 100%;
         cursor: pointer;
+        margin-left: 0;
     }
 
     .page-template-page-facebook .gform_heading,
@@ -210,16 +230,41 @@
     .page-template-page-facebook .site-main {
         padding-top: 5rem;
         padding-bottom: 5rem;
+    }
+
+    .page-template-page-facebook {
         background: #F7F6F2;
     }
 
     .page-template-page-facebook .gform_page_footer.top_label {
         display: flex;
         justify-content: center;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .page-template-page-facebook #gform_page_18_4 .gform_ajax_spinner {
+        bottom: -5px;
+    }
+
+    .page-template-page-facebook .gform_wrapper.gravity-theme .gfield-choice-input+label {
+        cursor: pointer;
     }
 
     .page-template-page-facebook .gform_page_footer.top_label img {
         width: 50px;
+        display: block;
+        margin-inline: auto;
+    }
+
+    .page-template-page-facebook .gform_ajax_spinner {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 15px);
+    }
+
+    .page-template-page-facebook .gform_heading .gform_required_legend {
+        display: none;
     }
 
     .page-template-page-facebook .gform_wrapper.gravity-theme fieldset {
@@ -279,10 +324,54 @@
     .page-template-page-facebook .gform_wrapper.gravity-theme .gf_progressbar_percentage {
         height: 14px;
     }
+
+    @media only screen and (max-width: 600px) {
+        .page-template-page-facebook .gform_wrapper.gravity-theme .gfield {
+            min-width: 70%;
+        }
+
+        .page-template-page-facebook .gfield_radio {
+            flex-direction: column;
+        }
+
+        .form-contianer .gf_progressbar {
+            max-width: 85%;
+        }
+
+        .page-template-page-facebook .gf_progressbar_percentage.percentbar_blue.percentbar_100 {
+            width: 94% !important;
+        }
+
+        #facebook-page {
+            overflow-y: unset;
+        }
+
+        .form-container__confirmation-modal-content {
+            min-width: auto;
+        }
+
+        .page-template-page-facebook .form-contianer,
+        .form-container__confirmation-modal-content {
+            margin: 0 20px;
+        }
+    }
 </style>
 
 <script>
     jQuery(document).ready(function($) {
+
+        $('.close-form-btn').on('click', function() {
+            $('#confirmationModal').css('display', 'flex');
+        });
+
+        $('#confirmYes').on('click', function() {
+            window.location.href = '/';
+        });
+
+        $('#confirmNo').on('click', function() {
+            $('#confirmationModal').hide();
+        });
+        
         var formId = 18; // Replace with your form ID
 
         // Function to move to the next page
