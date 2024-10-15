@@ -63,7 +63,7 @@ get_header();
 		'meta_query' => array(
 			array(
 				'key' => 'accident_injury',
-				'value' => '"' . get_the_ID() . '"',
+				'value' => get_the_ID(),
 				'compare' => 'LIKE'
 			)
 		)
@@ -95,6 +95,8 @@ get_header();
 		</div>
 	</div>
 </section>
+<?php else : ?>	
+
 <?php endif; ?>
 <?php get_template_part( 'template-parts/banner-cta-contact' ); ?>
 <?php get_template_part( 'template-parts/pages-cta' ); ?>

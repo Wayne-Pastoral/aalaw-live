@@ -1,4 +1,4 @@
-<style>
+ <style>
 .numbers__main a.item {
 	position: relative !important;
     border-right: 1px solid #384541;
@@ -9,9 +9,10 @@
     justify-content: center !important;
 }
 
-.numbers__main:last-child a.item{
+/* .numbers__main:last-child a.item{
 	border-right: unset !important;
-}
+} */
+
 
 
 .item-content {
@@ -64,6 +65,13 @@
 		section.numbers-carousel.wide{
 			overflow: hidden;
 		}
+	.single-ppc-site .numbers-contain.owl-carousel .owl-dot {
+        background: #fff;
+
+    }
+		.single-ppc-site button.owl-dot.active {
+    background: #00a475 !important;
+	}
 	}
 </style>
 
@@ -120,3 +128,38 @@
 	
 </section>
 <?php endwhile; endif; ?>
+<script>
+	var $ = jQuery;
+$(document).ready(function() {
+    function initCarousel() {
+        if (window.innerWidth <= 900) {
+            if (!$('.numbers-contain').hasClass('owl-loaded')) {
+                $('.numbers-contain').owlCarousel({
+                    items: 1, // You can change this number for the number of items visible on mobile
+                    loop: true,
+                    nav: false,
+                    dots: true,
+                    autoplay: false,
+                    margin: 10
+                });
+            }
+        } else {
+            // Destroy the carousel if it's not mobile
+            if ($('.numbers-contain').hasClass('owl-loaded')) {
+                $('.numbers-contain').trigger('destroy.owl.carousel');
+                $('.numbers-contain').removeClass('owl-carousel');
+                $('.numbers-contain').find('.owl-stage-outer').children().unwrap();
+            }
+        }
+    }
+
+    // Initialize on page load
+    initCarousel();
+
+    // Re-initialize on window resize
+    $(window).resize(function() {
+        initCarousel();
+    });
+});
+	
+</script> 

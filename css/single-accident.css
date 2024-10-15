@@ -2,6 +2,9 @@ body {
     padding-bottom: 0;
     overflow-x: hidden;
 }
+.remove-bg {
+	background:unset !Important;
+}
 .top{display:none;}
 section#shadow-host-companion {padding: 0;}
 /* ------------- For specific page only ------------- */
@@ -925,6 +928,9 @@ aside .post-type-list {
 
 @media (max-width:1200px){
 	.group-banner .wp-block-heading{font-size: 20px;}
+	.pages-cta .single-page {
+    padding: 2rem;
+}
 }
 
 @media (min-width: 901px) and (max-width: 1024px) {

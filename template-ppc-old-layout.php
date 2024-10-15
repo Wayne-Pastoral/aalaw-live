@@ -64,7 +64,7 @@
 			</div>
 		</section>
 		<?php endwhile; endif; ?>
-		<?php get_template_part( 'template-parts/numbers-carousel' ); ?>
+		<?php //get_template_part( 'template-parts/numbers-carousel' ); ?>
 		<?php get_template_part( 'template-parts/nascar-logos' ); ?>
 		<section class="three-column-list">
 			<div class="container">

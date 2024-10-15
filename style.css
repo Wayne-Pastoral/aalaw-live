@@ -7186,7 +7186,8 @@ figcaption.wp-element-caption {
 
 /* Attorneys Section - Taran Kaur */
 @media only screen and (max-width: 1580px) {
-	.attorneys  a[href="https://aa.law/attorneys/taran-kaur/"] .postion {
+	.attorneys  a[href="https://aa.law/attorneys/taran-kaur/"] .postion,
+	.attorneys  a[href="https://aa.law/es/attorneys/taran-kaur/"] .postion {
 		font-size: 12px;
 	}
 }
