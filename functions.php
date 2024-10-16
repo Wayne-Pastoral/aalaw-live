@@ -352,7 +352,7 @@ function my_custom_breadcrumbs(){
 			$vals = array($vals);
 			for ($i = 0; $i < count($vals); $i++) {
 				$title = html_entity_decode(get_the_title($vals[$i]));
-				if ($title !== 'Traffic') {
+				if ($title !== 'Traffic' && $title !== 'Workplace') {
 					$page .= "<a href='" . get_the_permalink($vals[$i]) . "' aria-label='" . esc_attr($title) . "'>" . $title . "</a>" . $separator;
 				}
 			}
