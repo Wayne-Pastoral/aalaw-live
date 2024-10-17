@@ -368,6 +368,14 @@
             margin: 0 20px;
         }
 
+        .form-container__confirmation-modal-content {
+            padding: 2rem 1.5rem;
+        }
+
+        .form-contianer__buttons {
+            gap: 10px;
+        }
+
         .page-template-page-facebook .form-contianer {
             padding: 2rem 1.5rem;
         }
