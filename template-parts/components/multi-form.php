@@ -7,11 +7,6 @@
 
 <div id="confirmationModal" class="form-container__confirmation-modal">
     <div class="form-container__confirmation-modal-content">
-        <div class="form-container__logo">
-            <a href="<?php echo home_url(); ?>">
-                <img src="https://aa.law/wp-content/uploads/2024/10/AA-logo.png" alt="Site Logo">
-            </a>
-        </div>
         <h3>Are you sure you don't need help?</h3>
         <div class="form-container__buttons">
             <button id="confirmYes2" class="form-container__button">Yes</button>
@@ -159,7 +154,7 @@
         padding: 2rem;
         border-radius: 5px;
         text-align: center;
-        min-width: 700px;
+        min-width: 635px;
     }
 
     .popup-content #input_18_33 label {
@@ -444,6 +439,64 @@
             max-width: 635px;
         }
     }
+
+    
+    /* Styles for the pop-up */
+    .popup {
+        display: none;
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        transition: bottom .5s;
+        z-index: 99999;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .popup.show {
+        bottom: 0;
+    }
+
+    .popup .popup-content {
+        position: relative;
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    /* Media queries */
+
+    @media screen and (max-width: 600px) {
+        .popup .popup-content {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            width: 100%;
+            margin: 0 20px;
+        }
+
+        .popup-content .form-container .gf_progressbar {
+            max-width: 85%;
+        }
+
+        .popup-content .form-container__buttons {
+            gap: 10px;
+        }
+    }
+
+    @media screen and (max-width: 375px) {
+        .popup-content .form-container__buttons {
+            flex-direction: column;
+        }
+    }
+
+/* Styles for the pop-up */
 </style>
 
 <script>
@@ -468,7 +521,7 @@
             // Auto-close Thank You modal after 5 seconds
             setTimeout(function() {
                 closeThankYouModal();
-            }, 5000);
+            }, 10000);
         });
 
         // Close Thank You Modal and prevent #popup from showing again
