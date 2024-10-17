@@ -5,7 +5,7 @@
     <div class="form-contianer">
         <div class="form-contianer__logo">
             <a href="<?php echo home_url(); ?>">
-                <img src="https://aa.law/wp-content/uploads/2024/10/image-1.png" alt="Site Logo">
+                <img src="https://aa.law/wp-content/uploads/2024/10/AA-logo.png" alt="Site Logo">
             </a>
         </div>
         <div class="form-contianer__main">
@@ -18,7 +18,7 @@
         <div class="form-container__confirmation-modal-content">
             <div class="form-contianer__logo">
                 <a href="<?php echo home_url(); ?>">
-                    <img src="https://aa.law/wp-content/uploads/2024/10/image-1.png" alt="Site Logo">
+                    <img src="https://aa.law/wp-content/uploads/2024/10/AA-logo.png" alt="Site Logo">
                 </a>
             </div>
             <h3>Are you sure you don't need help?</h3>
@@ -244,7 +244,7 @@
     }
 
     .page-template-page-facebook #gform_page_18_4 .gform_ajax_spinner {
-        bottom: -5px;
+        bottom: -25px;
     }
 
     .page-template-page-facebook .gform_wrapper.gravity-theme .gfield-choice-input+label {
@@ -280,6 +280,9 @@
     .page-template-page-facebook .form-contianer__logo img {
         display: block;
         margin-inline: auto;
+        max-width: 460px;
+        object-fit: contain;
+        width: 100%;
         margin-bottom: 2rem;
     }
 
@@ -321,6 +324,16 @@
         object-fit: contain;
     }
 
+    .custom-form__image {
+        max-width: 100%;
+        width: 115px;
+    }
+
+    .custom-form__image-2 {
+        max-width: 100%;
+        width: 90px; 
+    }
+
     .page-template-page-facebook .gform_wrapper.gravity-theme .gf_progressbar_percentage {
         height: 14px;
     }
@@ -353,6 +366,10 @@
         .page-template-page-facebook .form-contianer,
         .form-container__confirmation-modal-content {
             margin: 0 20px;
+        }
+
+        .page-template-page-facebook .form-contianer {
+            padding: 2rem 1.5rem;
         }
     }
 </style>

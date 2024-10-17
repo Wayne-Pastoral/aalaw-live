@@ -1066,7 +1066,7 @@ function custom_confirmation_message( $confirmation, $form, $entry, $is_ajax ) {
         <div class="custom-confirmation-message__column custom-confirmation-message__column--right">
             <div class="custom-confirmation-message__message">
 				<div class="custom-confirmation-message__logo">
-					<img src="https://aa.law/wp-content/uploads/2024/10/image-1.png" alt="Site Logo">
+					<img src="https://aa.law/wp-content/uploads/2024/10/AA-logo.png" alt="Site Logo">
 				</div>
                 <h4>Thank you.<br> Expect to hear from us shortly. <br>Please call <strong><a class="custom-confirmation-message__phone-number" data-calltrk-noswap="" href="tel:18003101606">(800) 310-1606</a></strong> if you find yourself in need of legal representation.</h4>
                 <div class="custom-confirmation-message__alert">
