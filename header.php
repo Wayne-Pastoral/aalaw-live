@@ -143,3 +143,71 @@
 				<?php } ?>
 				
 	</header><!-- #masthead -->
+
+	<?php
+		if (isset($_GET['debug'])) {
+			$post = get_post();
+			if ($post->ID == 91) {
+	?>
+		<!-- Pop-up Form -->
+		<div id="popup" class="popup">
+			<div class="popup-content">
+				<?php get_template_part('template-parts/components/multi-form'); ?>
+			</div>
+		</div>
+
+		<script>
+			var popup = document.getElementById('popup');
+			var close = document.querySelector('#confirmYes');
+			var isPopupVisible = false;
+
+			// Check if the popup was closed before
+			var popupClosed = localStorage.getItem('popupClosed');
+
+			// Function to show the pop-up with animation
+			function showPopup() {
+				if (!isPopupVisible && !popupClosed) {
+					popup.style.display = 'flex';
+					setTimeout(function() {
+						popup.classList.add('show');
+					}, 10); // Slight delay to allow the display change to take effect
+					isPopupVisible = true;
+				}
+			}
+
+			// Show the pop-up after 15 seconds if it was not closed before
+			if (!popupClosed) {
+				setTimeout(showPopup, 15000);
+			}
+
+			// Show the pop-up if the user scrolls 10-15% down the page or 10-15% up from the bottom and it was not closed before
+			if (!popupClosed) {
+				window.addEventListener('scroll', function () {
+					var scrollTop = window.scrollY;
+					var scrollHeight = document.body.scrollHeight;
+					var windowHeight = window.innerHeight;
+
+					var scrollPercentTop = (scrollTop / (scrollHeight - windowHeight)) * 100;
+					var scrollPercentBottom = ((scrollHeight - windowHeight - scrollTop) / (scrollHeight - windowHeight)) * 100;
+
+					if ((scrollPercentTop >= 10 && scrollPercentTop <= 15) || (scrollPercentBottom >= 10 && scrollPercentBottom <= 15)) {
+						showPopup();
+					}
+				});
+			}
+
+			// Close the pop-up when the user clicks the "x"
+			close.addEventListener('click', function () {
+				popup.classList.remove('show');
+				popup.style.display = 'none';
+				setTimeout(function() {
+					popup.style.display = 'none';
+					localStorage.setItem('popupClosed', 'true'); // Set the flag in localStorage
+				}, 500); // Match the transition duration
+			});
+
+		</script>
+	<?php 
+			} // End of inner if block
+		} // End of outer if block for 'debug' query parameter
+	?>

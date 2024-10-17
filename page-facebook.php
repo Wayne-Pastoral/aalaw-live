@@ -2,13 +2,13 @@
 <?php get_header(); ?>
 
 <main id="primary" class="site-main">
-    <div class="form-contianer">
-        <div class="form-contianer__logo">
+    <div class="form-container">
+        <div class="form-container__logo">
             <a href="<?php echo home_url(); ?>">
                 <img src="https://aa.law/wp-content/uploads/2024/10/AA-logo.png" alt="Site Logo">
             </a>
         </div>
-        <div class="form-contianer__main">
+        <div class="form-container__main">
             <button class="close-form-btn" aria-label="Close form"><img src="https://aa.law/wp-content/uploads/2024/10/x.png" alt="Cross Icon"></button>
             <?php gravity_form(18, false, false, false, '', true); ?>
         </div>
@@ -16,15 +16,15 @@
 
     <div id="confirmationModal" class="form-container__confirmation-modal">
         <div class="form-container__confirmation-modal-content">
-            <div class="form-contianer__logo">
+            <div class="form-container__logo">
                 <a href="<?php echo home_url(); ?>">
                     <img src="https://aa.law/wp-content/uploads/2024/10/AA-logo.png" alt="Site Logo">
                 </a>
             </div>
             <h3>Are you sure you don't need help?</h3>
-            <div class="form-contianer__buttons">
-                <button id="confirmYes" class="form-contianer__button">Yes</button>
-                <button id="confirmNo" class="form-contianer__button">No</button>
+            <div class="form-container__buttons">
+                <button id="confirmYes" class="form-container__button">Yes</button>
+                <button id="confirmNo" class="form-container__button">No</button>
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@
     }
 
 
-    .page-template-page-facebook .form-contianer.form-contianer--submitted {
+    .page-template-page-facebook .form-container.form-container--submitted {
         padding: 0;
     }
 
@@ -44,7 +44,7 @@
         margin-bottom: 1rem;
     }
 
-    .form-contianer__buttons {
+    .form-container__buttons {
         display: flex;
         justify-content: space-between;
         gap: 20px;
@@ -62,7 +62,7 @@
         font-weight: 600;
     }
 
-    .form-contianer__button {
+    .form-container__button {
         width: 100%;
         cursor: pointer;
     }
@@ -73,7 +73,7 @@
         opacity: 0.8;
     }
 
-    .form-contianer .gf_progressbar {
+    .form-container .gf_progressbar {
         max-width: 93%;
     }
 
@@ -95,8 +95,8 @@
         align-items: center;
     }
 
-    .form-contianer--submitted .form-contianer__logo,
-    .form-contianer--submitted .close-form-btn {
+    .form-container--submitted .form-container__logo,
+    .form-container--submitted .close-form-btn {
         display: none;
     }
 
@@ -137,7 +137,7 @@
         margin-top: -5px;
     }
 
-    .form-contianer__main {
+    .form-container__main {
         position: relative;
     }
 
@@ -209,7 +209,7 @@
         display: none;
     }
 
-    .page-template-page-facebook .form-contianer {
+    .page-template-page-facebook .form-container {
         max-width: 835px;
         display: block;
         margin-inline: auto;
@@ -277,7 +277,7 @@
         gap: 20px;
     }
 
-    .page-template-page-facebook .form-contianer__logo img {
+    .page-template-page-facebook .form-container__logo img {
         display: block;
         margin-inline: auto;
         max-width: 460px;
@@ -347,7 +347,7 @@
             flex-direction: column;
         }
 
-        .form-contianer .gf_progressbar {
+        .form-container .gf_progressbar {
             max-width: 85%;
         }
 
@@ -363,7 +363,7 @@
             min-width: auto;
         }
 
-        .page-template-page-facebook .form-contianer,
+        .page-template-page-facebook .form-container,
         .form-container__confirmation-modal-content {
             margin: 0 20px;
         }
@@ -372,12 +372,36 @@
             padding: 2rem 1.5rem;
         }
 
-        .form-contianer__buttons {
+        .form-container__buttons {
             gap: 10px;
         }
 
-        .page-template-page-facebook .form-contianer {
+        .page-template-page-facebook .form-container {
             padding: 2rem 1.5rem;
+        }
+
+        .page-template-page-facebook .custom-form__image {
+            width: 70px;
+        }
+
+        .page-template-page-facebook .custom-form__image-2 {
+            width: 60px;
+        }
+
+        .page-template-page-facebook .gform_page_footer.top_label img {
+            width: 35px;
+        }
+
+        .custom-confirmation-message {
+            flex-direction: column;
+        }
+
+        .custom-confirmation-message__column {
+            width: 100%;
+        }
+
+        .custom-confirmation-message__column--right {
+            padding: 0 20px 20px;
         }
     }
 </style>

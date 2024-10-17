@@ -1058,59 +1058,118 @@ function add_aria_label_to_buttons($block_content, $block) {
 
 add_filter( 'gform_confirmation_18', 'custom_confirmation_message', 10, 4 );
 function custom_confirmation_message( $confirmation, $form, $entry, $is_ajax ) {
-    $confirmation = '
-    <div class="custom-confirmation-message">
-        <div class="custom-confirmation-message__column">
-            <img class="custom-confirmation-message__main-image" src="https://aa.law/wp-content/uploads/2024/10/Frame-383.png" alt="Thank You Image" />
-        </div>
-        <div class="custom-confirmation-message__column custom-confirmation-message__column--right">
+    global $post; // Access the global $post object
+
+    if ( isset( $post->ID ) && $post->ID == 91 ) {
+        // First confirmation message if the post ID is 91
+        $confirmation = '
+        <div class="custom-confirmation-message">
             <div class="custom-confirmation-message__message">
-				<div class="custom-confirmation-message__logo">
-					<img src="https://aa.law/wp-content/uploads/2024/10/AA-logo.png" alt="Site Logo">
-				</div>
-                <h4>Thank you.<br> Expect to hear from us shortly. <br>Please call <strong><a class="custom-confirmation-message__phone-number" data-calltrk-noswap="" href="tel:18003101606">(800) 310-1606</a></strong> if you find yourself in need of legal representation.</h4>
+                <h4>Your privacy is important to us.<br> The information provided will be used solely to discuss your case.</h4>
                 <div class="custom-confirmation-message__alert">
                     <img src="https://aa.law/wp-content/uploads/2024/10/clock.png" alt="">
-                    <span>You will be redirected in <span id="countdown">5</span> seconds</span>
+                    <span>This pop-up will close in <span id="countdown">5</span> seconds</span>
                 </div>
-                <button id="close-button" class="custom-confirmation-message__close">close</button>
+                <button id="close-button" class="custom-confirmation-message__close">Exit</button>
             </div>
         </div>
-    </div>
-    <script>
-        $(".form-contianer").addClass("form-contianer--submitted");
+        <script>
+            $(".form-container").addClass("form-container--submitted");
 
-        // Close button functionality
-        $(".custom-confirmation-message__close").on("click", function() {
-            window.location.href = "/";
-        });
+            // Check if popup was closed previously
+            if (!localStorage.getItem("popupClosed")) {
+                // Show popup only if not closed before
+                $("#popup").css("display", "flex");
+                
+                // Countdown function
+                var countdownElement = document.getElementById("countdown");
+                var countdownValue = 5;
 
-        // Countdown function
-        var countdownElement = document.getElementById("countdown");
-        var countdownValue = 5;
-        
-        var countdownTimer = setInterval(function() {
-            countdownValue--;
-            countdownElement.textContent = countdownValue;
-            if (countdownValue <= 0) {
-                clearInterval(countdownTimer);
-                window.location.href = "/";
+                var countdownTimer = setInterval(function() {
+                    countdownValue--;
+                    countdownElement.textContent = countdownValue;
+                    if (countdownValue <= 0) {
+                        clearInterval(countdownTimer);
+                        closePopup();
+                    }
+                }, 1000); // Update every second (1000ms)
+
+                // Auto-close after 5 seconds
+                setTimeout(function(){
+                    closePopup();
+                }, 5000);
+
+                // Close button functionality
+                $("#close-button").on("click", function() {
+                    closePopup();
+                });
             }
-        }, 1000); // Update every second (1000ms)
-        
-        // Auto-redirect after 5 seconds
-        setTimeout(function(){
-            window.location.href = "/";
-        }, 5000);
-    </script>';
+
+            // Function to close the popup and store the closed state in localStorage
+            function closePopup() {
+                $("#popup").css("display", "none");
+                localStorage.setItem("popupClosed", "true"); // Save in localStorage to prevent popup on refresh
+            }
+        </script>';
+    } else {
+        // Second confirmation message for all other posts
+        $confirmation = '
+        <div class="custom-confirmation-message">
+            <div class="custom-confirmation-message__column">
+                <img class="custom-confirmation-message__main-image" src="https://aa.law/wp-content/uploads/2024/10/Frame-383.png" alt="Thank You Image" />
+            </div>
+            <div class="custom-confirmation-message__column custom-confirmation-message__column--right">
+                <div class="custom-confirmation-message__message">
+                    <div class="custom-confirmation-message__logo">
+                        <img src="https://aa.law/wp-content/uploads/2024/10/AA-logo.png" alt="Site Logo">
+                    </div>
+                    <h4>Thank you.<br> Expect to hear from us shortly. <br>Please call <strong><a class="custom-confirmation-message__phone-number" data-calltrk-noswap="" href="tel:18003101606">(800) 310-1606</a></strong> if you find yourself in need of legal representation.</h4>
+                    <div class="custom-confirmation-message__alert">
+                        <img src="https://aa.law/wp-content/uploads/2024/10/clock.png" alt="">
+                        <span>You will be redirected in <span id="countdown">5</span> seconds</span>
+                    </div>
+                    <button id="close-button" class="custom-confirmation-message__close">close</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(".form-container").addClass("form-container--submitted");
+
+            // Close button functionality
+            $(".custom-confirmation-message__close").on("click", function() {
+                window.location.href = "/";
+            });
+
+            // Countdown function
+            var countdownElement = document.getElementById("countdown");
+            var countdownValue = 5;
+            
+            var countdownTimer = setInterval(function() {
+                countdownValue--;
+                countdownElement.textContent = countdownValue;
+                if (countdownValue <= 0) {
+                    clearInterval(countdownTimer);
+                    window.location.href = "/";
+                }
+            }, 1000); // Update every second (1000ms)
+            
+            // Auto-redirect after 5 seconds
+            setTimeout(function(){
+                window.location.href = "/";
+            }, 5000);
+        </script>';
+    }
 
     return $confirmation;
 }
 
 function add_facebook_page_id($output) {
-    if (is_page_template('page-facebook.php')) {
+    global $post;
+    
+    if (is_page_template('page-facebook.php') || (isset($post->ID) && $post->ID == 91)) {
         $output .= ' id="facebook-page"';
     }
+    
     return $output;
 }
 add_filter('language_attributes', 'add_facebook_page_id');
